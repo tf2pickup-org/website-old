@@ -1,5 +1,5 @@
 <script>
-import NavigationBar from './navigation-bar.svelte';
+  import NavigationBar from '../core/navigation-bar.svelte';
 </script>
 
 <NavigationBar />
