@@ -1,61 +1,62 @@
-<div class="navbar-container">
-  <div class="navbar-items">
-    <a href="index.html" aria-current="page" class="navbar-logo w-nav-brand w--current">
-      <img
-        src="tf2pickup-pl-logo.png"
-        loading="lazy"
-        alt="tf2pickup.org logo"
-        class="navbar-logo-img"
-      />
-    </a>
-    <div class="navbar-divider" />
-    <nav role="navigation" class="navbar-menu w-nav-menu">
-      <div class="navbar-links-wrapper">
-        <a href="/#regions" class="navbar-link w-nav-link">Regions</a>
-        <a href="about-us.html" class="navbar-link w-nav-link">about us</a>
-        <a href="updates.html" class="navbar-link w-nav-link">updates</a>
-        <a href="partners.html" class="navbar-link w-nav-link">partners</a>
-        <div class="disabled-link-wrapper">
-          <a href="#" class="navbar-link disabled-link w-nav-link">how to play</a>
-          <div class="tool-tip">
-            <div class="tool-tip-top" />
-            <p class="tool-tip-p">coming soon</p>
+<script>
+  import PlayNowButton from '../core/play-now-button.svelte';
+</script>
+
+<div role="banner" class="navbar-wrapper">
+  <div class="navbar-container">
+    <div class="navbar-items">
+      <a href="index.html" aria-current="page" class="navbar-logo w-nav-brand w--current">
+        <img
+          src="tf2pickup-pl-logo.png"
+          loading="lazy"
+          alt="tf2pickup.org logo"
+          class="navbar-logo-img"
+        />
+      </a>
+      <div class="navbar-divider" />
+      <nav role="navigation" class="navbar-menu w-nav-menu">
+        <div class="navbar-links-wrapper">
+          <a href="/#regions" class="navbar-link">Regions</a>
+          <a href="about-us.html" class="navbar-link">about us</a>
+          <a href="updates.html" class="navbar-link">updates</a>
+          <a href="partners.html" class="navbar-link">partners</a>
+          <div class="disabled-link-wrapper">
+            <a href="#" class="navbar-link disabled-link">how to play</a>
+            <div class="tool-tip">
+              <div class="tool-tip-top" />
+              <p class="tool-tip-p">coming soon</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="navbar-buttons">
-        <a href="/#regions" class="navbar-regions-btn inline-block"
-          ><img
-            src="regions-img.png"
-            loading="lazy"
-            alt="Regions icon"
-            class="navbar-regions-btn-img"
-          /></a
-        >
-        <a href="/#playNow" class="navbar-playnow-btn inline-block">
-          <p class="navbar-playnow-p">play now</p>
-          <img
-            src="arrow-right-svg.svg"
-            loading="lazy"
-            alt="Arrow right"
-            class="navbar-playnow-img"
-          />
-          <div class="navbar-playnow-dot" />
-        </a>
-        <div class="navbar-divider nd-left" />
-        <div class="navbar-players-total">
-          <p class="navbar-players-total-large">420</p>
-          <p class="navbar-players-total-small">players<br />online</p>
+        <div class="navbar-buttons">
+          <a href="/#regions" class="navbar-regions-btn inline-block">
+            <img
+              src="regions-img.png"
+              loading="lazy"
+              alt="Regions icon"
+              class="navbar-regions-btn-img"
+            /></a>
+          <PlayNowButton />
+          <div class="navbar-divider nd-left" />
+          <div class="navbar-players-total">
+            <p class="navbar-players-total-large">420</p>
+            <p class="navbar-players-total-small">players<br />online</p>
+          </div>
         </div>
-      </div>
-    </nav>
-  </div>
-  <div class="navbar-mobile-btn w-nav-button">
-    <div class="navbar-mobile-btn-icon w-icon-nav-menu" />
+      </nav>
+    </div>
+    <div class="navbar-mobile-btn w-nav-button">
+      <div class="navbar-mobile-btn-icon w-icon-nav-menu" />
+    </div>
   </div>
 </div>
 
 <style lang="scss">
+  .navbar-wrapper {
+    padding: 20px;
+    background-color: transparent;
+  }
+
   .navbar-container {
     display: flex;
     justify-content: space-between;
@@ -105,7 +106,7 @@
     float: right;
   }
 
-  .w-nav-link {
+  .navbar-link {
     position: relative;
     display: inline-block;
     vertical-align: top;
@@ -114,10 +115,8 @@
     text-align: left;
     margin-left: auto;
     margin-right: auto;
-  }
-
-  .navbar-link {
     padding: 15px;
+
     transition: color 200ms ease;
     color: #fff;
     text-decoration: none;
@@ -127,7 +126,7 @@
       color: hsla(0, 0%, 100%, 0.7);
     }
 
-    &.w-current {
+    &.current {
       color: #ffe497;
     }
 
@@ -174,23 +173,6 @@
     text-transform: uppercase;
   }
 
-  .navbar-playnow-img {
-    width: 16px;
-    height: 16px;
-    margin-left: 40px;
-  }
-
-  .navbar-playnow-dot {
-    position: absolute;
-    left: 0%;
-    top: 0%;
-    right: auto;
-    bottom: auto;
-    width: 3px;
-    height: 3px;
-    background-color: #ffe497;
-  }
-
   .disabled-link-wrapper {
     position: relative;
     z-index: 10;
@@ -204,6 +186,7 @@
     padding: 10px;
     border-radius: 4px;
     background-color: #eb1557;
+    display: none;
   }
 
   .tool-tip-top {
