@@ -5,7 +5,7 @@
 <div role="banner" class="navbar-wrapper">
   <div class="navbar-container">
     <div class="navbar-items">
-      <a href="index.html" aria-current="page" class="navbar-logo w-nav-brand w--current">
+      <a href="/" aria-current="page" class="navbar-logo w-nav-brand w--current">
         <img
           src="images/tf2pickup-pl-logo.png"
           loading="lazy"
@@ -16,10 +16,10 @@
       <div class="navbar-divider" />
       <nav role="navigation" class="navbar-menu w-nav-menu">
         <div class="navbar-links-wrapper">
-          <a href="/#regions" class="navbar-link">Regions</a>
-          <a href="about-us.html" class="navbar-link">about us</a>
-          <a href="updates.html" class="navbar-link">updates</a>
-          <a href="partners.html" class="navbar-link">partners</a>
+          <a href="/#Regions" class="navbar-link">Regions</a>
+          <a href="/about-us" class="navbar-link">about us</a>
+          <a href="/updates" class="navbar-link">updates</a>
+          <a href="/partners" class="navbar-link">partners</a>
           <div class="disabled-link-wrapper">
             <a href="#" class="navbar-link disabled-link">how to play</a>
             <div class="tool-tip">

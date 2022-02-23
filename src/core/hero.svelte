@@ -2,17 +2,24 @@
   import Button from './button.svelte';
 </script>
 
-<div class="hero-wrapper">
-  <div class="hero-content">
-    <h1 class="main-h1">tf2pickup.org</h1>
-    <p class="hero-p">The easiest way to play Team Fortress 2 competitive pick-up games<br /></p>
-    <div class="npb-hero">
-      <Button destination="/play-now" text="Play Now" />
+<section class="home-hero-section">
+  <div class="hero-wrapper">
+    <div class="hero-content">
+      <h1 class="main-h1">tf2pickup.org</h1>
+      <p class="hero-p">The easiest way to play Team Fortress 2 competitive pick-up games<br /></p>
+      <div class="npb-hero">
+        <Button destination="/play-now" text="Play Now" />
+      </div>
     </div>
   </div>
-</div>
+</section>
 
 <style lang="scss">
+  .home-hero-section {
+    display: flex;
+    min-height: calc(100vh - 92px);
+    flex-direction: column;
+  }
   .hero-wrapper {
     display: flex;
     justify-content: center;

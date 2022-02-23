@@ -33,9 +33,6 @@
     padding-left: 20px;
   }
   .section-title-lines {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
     margin-top: 230px;
   }
@@ -70,14 +67,8 @@
     position: absolute;
     top: -210px;
     z-index: 5;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
+    width: 100%;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
     flex-direction: column;
   }
   .first-line {
@@ -96,9 +87,6 @@
 
   .third-line {
     height: 2px;
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-    -ms-flex: 1;
     flex: 1;
     background-color: #eb1557;
   }

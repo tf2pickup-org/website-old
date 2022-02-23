@@ -4,7 +4,7 @@
   export let sectionName;
 </script>
 
-<section class="homepage-section wf-section">
+<section class="homepage-section wf-section" id={sectionName}>
   <SectionHeading {sectionName} />
   <div class="main-container">
     <div class="about-us-wrapper">
@@ -41,13 +41,16 @@
     padding-top: 100px;
     padding-bottom: 100px;
   }
+
   .about-us-wrapper {
     max-width: 650px;
     margin-top: 160px;
   }
+
   .about-us-p {
     margin-bottom: 30px;
   }
+
   .section-background-wrapper {
     position: absolute;
     left: 0%;
@@ -56,6 +59,7 @@
     bottom: 0%;
     z-index: 10;
   }
+
   .section-gradient-overlay {
     position: absolute;
     left: 0%;
@@ -63,19 +67,11 @@
     right: 0%;
     bottom: 0%;
     z-index: 50;
-    background-image: -webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(5%, #0a1a33),
-        color-stop(30%, transparent)
-      ),
-      -webkit-gradient(linear, left top, left bottom, color-stop(70%, transparent), color-stop(95%, #0a1a33)),
-      -webkit-gradient(linear, left top, right top, color-stop(50%, #0a1a33), color-stop(75%, transparent));
     background-image: linear-gradient(180deg, #0a1a33 5%, transparent 30%),
       linear-gradient(180deg, transparent 70%, #0a1a33 95%),
       linear-gradient(90deg, #0a1a33 50%, transparent 75%);
   }
+
   .main-container {
     position: relative;
     z-index: 100;
@@ -84,5 +80,16 @@
     margin-left: auto;
     padding-right: 20px;
     padding-left: 20px;
+  }
+
+  .section-bg {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 </style>
