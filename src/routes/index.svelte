@@ -5,10 +5,11 @@
 </script>
 
 <section class="home-hero-section">
-  <NavigationBar/>
-  <Hero/>
+  <NavigationBar />
+  <Hero />
 </section>
-<ContentSectionWithHeading sectionName="Regions"/>
+<ContentSectionWithHeading sectionName="Regions" />
+
 <style lang="scss">
   .home-hero-section {
     display: flex;

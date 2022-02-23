@@ -1,15 +1,11 @@
 <script>
-  export let destination
-  export let text
+  export let destination;
+  export let text;
 </script>
-<a href={ destination } class="playnow-btn inline-block">
-  <p class="playnow-p">{ text }</p>
-  <img
-    src="images/arrow-right-svg.svg"
-    loading="lazy"
-    alt="Arrow right"
-    class="playnow-img"
-  />
+
+<a href={destination} class="playnow-btn inline-block">
+  <p class="playnow-p">{text}</p>
+  <img src="images/arrow-right-svg.svg" loading="lazy" alt="Arrow right" class="playnow-img" />
   <div class="playnow-dot" />
 </a>
 

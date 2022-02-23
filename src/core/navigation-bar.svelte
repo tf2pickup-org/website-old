@@ -35,7 +35,8 @@
               loading="lazy"
               alt="Regions icon"
               class="navbar-regions-btn-img"
-            /></a>
+            /></a
+          >
           <Button destination="#/PlayNow" text="Play Now" />
           <div class="navbar-divider nd-left" />
           <div class="navbar-players-total">
