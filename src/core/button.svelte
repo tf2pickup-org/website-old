@@ -1,7 +1,11 @@
-<a href="/#playNow" class="playnow-btn inline-block">
-  <p class="playnow-p">play now</p>
+<script>
+  export let destination
+  export let text
+</script>
+<a href={ destination } class="playnow-btn inline-block">
+  <p class="playnow-p">{ text }</p>
   <img
-    src="arrow-right-svg.svg"
+    src="images/arrow-right-svg.svg"
     loading="lazy"
     alt="Arrow right"
     class="playnow-img"
@@ -18,7 +22,7 @@
     justify-content: center;
     align-items: center;
     flex: 0 0 auto;
-    background-image: url('/playnow-cta-svg.svg');
+    background-image: url('images/playnow-cta-svg.svg');
     background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat;

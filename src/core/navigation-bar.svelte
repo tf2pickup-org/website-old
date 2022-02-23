@@ -1,5 +1,5 @@
 <script>
-  import PlayNowButton from '../core/play-now-button.svelte';
+  import Button from './button.svelte';
 </script>
 
 <div role="banner" class="navbar-wrapper">
@@ -7,7 +7,7 @@
     <div class="navbar-items">
       <a href="index.html" aria-current="page" class="navbar-logo w-nav-brand w--current">
         <img
-          src="tf2pickup-pl-logo.png"
+          src="images/tf2pickup-pl-logo.png"
           loading="lazy"
           alt="tf2pickup.org logo"
           class="navbar-logo-img"
@@ -31,12 +31,12 @@
         <div class="navbar-buttons">
           <a href="/#regions" class="navbar-regions-btn inline-block">
             <img
-              src="regions-img.png"
+              src="images/regions-img.png"
               loading="lazy"
               alt="Regions icon"
               class="navbar-regions-btn-img"
             /></a>
-          <PlayNowButton />
+          <Button destination="#/PlayNow" text="Play Now" />
           <div class="navbar-divider nd-left" />
           <div class="navbar-players-total">
             <p class="navbar-players-total-large">420</p>
