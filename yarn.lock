@@ -1924,6 +1924,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lodash.clonedeep@npm:^4.5.0":
+  version: 4.5.0
+  resolution: "lodash.clonedeep@npm:4.5.0"
+  checksum: 92c46f094b064e876a23c97f57f81fbffd5d760bf2d8a1c61d85db6d1e488c66b0384c943abee4f6af7debf5ad4e4282e74ff83177c9e63d8ff081a4837c3489
+  languageName: node
+  linkType: hard
+
+"lodash.get@npm:^4.4.2":
+  version: 4.4.2
+  resolution: "lodash.get@npm:4.4.2"
+  checksum: e403047ddb03181c9d0e92df9556570e2b67e0f0a930fcbbbd779370972368f5568e914f913e93f3b08f6d492abc71e14d4e9b7a18916c31fa04bd2306efe545
+  languageName: node
+  linkType: hard
+
+"lodash.isequal@npm:^4.5.0":
+  version: 4.5.0
+  resolution: "lodash.isequal@npm:4.5.0"
+  checksum: da27515dc5230eb1140ba65ff8de3613649620e8656b19a6270afe4866b7bd461d9ba2ac8a48dcc57f7adac4ee80e1de9f965d89d4d81a0ad52bb3eec2609644
+  languageName: node
+  linkType: hard
+
 "lodash.merge@npm:^4.6.2":
   version: 4.6.2
   resolution: "lodash.merge@npm:4.6.2"
@@ -2671,6 +2692,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"simply-reactive@github:vadimkorr/simply-reactive#1.0.2":
+  version: 1.0.0
+  resolution: "simply-reactive@https://github.com/vadimkorr/simply-reactive.git#commit=8d1ae831b2fbba1cf4446543f954b4efe28013e0"
+  dependencies:
+    lodash.clonedeep: ^4.5.0
+    lodash.get: ^4.4.2
+    lodash.isequal: ^4.5.0
+  checksum: db03f12a0e7dba1286e43c4f1553ddcb3553834290dc609a6e0c4960fda3a5c93a8416c7fc3aff62df4db69f3150b07ea96c9a18c0a1e622d76eb53ca5979700
+  languageName: node
+  linkType: hard
+
 "slice-ansi@npm:^4.0.0":
   version: 4.0.0
   resolution: "slice-ansi@npm:4.0.0"
@@ -2824,6 +2856,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"svelte-carousel@npm:^1.0.17-rc4":
+  version: 1.0.17-rc4
+  resolution: "svelte-carousel@npm:1.0.17-rc4"
+  dependencies:
+    simply-reactive: "github:vadimkorr/simply-reactive#1.0.2"
+  checksum: c69dba13502cd423295291281488c84d57616c97ef0a7500a5d42829a9ac5c4a9383099a618345f50a9d38afa421ed681aa1453bc8ab82671704e2c5065025db
+  languageName: node
+  linkType: hard
+
 "svelte-hmr@npm:^0.14.9":
   version: 0.14.9
   resolution: "svelte-hmr@npm:0.14.9"
@@ -2973,6 +3014,7 @@ __metadata:
     prettier-plugin-svelte: ^2.5.0
     sass: ^1.46.0
     svelte: ^3.44.0
+    svelte-carousel: ^1.0.17-rc4
     svelte-preprocess: ^4.10.1
     tailwindcss: ^3.0.23
   languageName: unknown

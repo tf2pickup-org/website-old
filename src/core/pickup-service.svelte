@@ -4,10 +4,11 @@
   //let export endpoint
   export let pickupInfo;
   console.log(pickupInfo);
-  let endpoint = pickupInfo.apiUrl;
+  export let endpoint;
+  export let link;
   console.log('endpoint', endpoint);
   //let export pickupLink
-  let pickupLink = pickupInfo.link;
+  let pickupLink = link;
   let pickup = {};
   onMount(async () => {
     fetch(endpoint)
@@ -31,36 +32,32 @@
   //TODO: Prepare images for each map, Edit it so background changes depending on the map currently wining votes
 </script>
 
-<div class="region-slide w-slide">
-  <div class="region-slide-layout">
-    <a href="#" class="region-slide-item w-inline-block">
-      <div class="rs-top">
-        <img
-          loading="lazy"
-          src="images/tf2pickup-pl-logo.png"
-          alt="Tf2pickup logo - Poland"
-          class="rs-logo"
-        />
-      </div>
-      <div class="rs-mid">
-        <div class="rs-players">
-          <div class="rs-players-info">
-            PLAYERS: <span class="rs-current-players">{pickup.players}</span>/{pickup.playerSlots}
-          </div>
-        </div>
-        <img
-          loading="lazy"
-          src="images/maps/slider-map-preview.png"
-          alt="Map preview"
-          class="rs-map-preview"
-        />
-      </div>
-      <div class="navbar-playnow-btn region-slider">
-        <Button destination={pickupLink} text="Play Now" />
-      </div>
-    </a>
+<a href={pickupLink} class="region-slide-item w-inline-block">
+  <div class="rs-top">
+    <img
+      loading="lazy"
+      src="images/tf2pickup-pl-logo.png"
+      alt="Tf2pickup logo - Poland"
+      class="rs-logo"
+    />
   </div>
-</div>
+  <div class="rs-mid">
+    <div class="rs-players">
+      <div class="rs-players-info">
+        PLAYERS: <span class="rs-current-players">{pickup.players}</span>/{pickup.playerSlots}
+      </div>
+    </div>
+    <img
+      loading="lazy"
+      src="images/maps/slider-map-preview.png"
+      alt="Map preview"
+      class="rs-map-preview"
+    />
+  </div>
+  <div class="navbar-playnow-btn region-slider">
+    <Button destination={pickupLink} text="Play Now" />
+  </div>
+</a>
 
 <style lang="scss">
   .navbar-playnow-btn.region-slider {
@@ -77,7 +74,7 @@
   }
   .region-slide-item {
     height: 100%;
-    -webkit-transition: opacity 300ms ease;
+    flex: 0 0 23%;
     transition: opacity 300ms ease;
     color: #fff;
     text-decoration: none;
@@ -93,13 +90,7 @@
     display: -ms-flexbox;
     display: flex;
     padding: 20px;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
     justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
     align-items: center;
   }
 
@@ -110,7 +101,6 @@
   .rs-map-preview {
     width: 100%;
     height: 100%;
-    -o-object-fit: cover;
     object-fit: cover;
   }
 
@@ -125,13 +115,7 @@
     display: -ms-flexbox;
     display: flex;
     padding: 20px;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
     justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
     align-items: center;
   }
 
@@ -154,8 +138,6 @@
   }
 
   .rsa-img {
-    -webkit-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
     transform: rotate(-45deg);
   }
 

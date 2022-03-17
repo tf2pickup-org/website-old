@@ -2,7 +2,7 @@
   <slot />
 </div>
 
-<style>
+<style lang="scss">
   .tab-list {
     border-bottom: 1px solid white;
   }

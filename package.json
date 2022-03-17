@@ -19,6 +19,7 @@
     "prettier-plugin-svelte": "^2.5.0",
     "sass": "^1.46.0",
     "svelte": "^3.44.0",
+    "svelte-carousel": "^1.0.17-rc4",
     "svelte-preprocess": "^4.10.1"
   },
   "type": "module",

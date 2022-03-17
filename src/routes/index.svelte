@@ -4,14 +4,11 @@
   import PickupService from '../core/pickup-service.svelte';
   import Hero from '../core/hero.svelte';
   import { pickupList } from '../utils/pickup-list.js';
-  import PickupCarousel from '../core/pickup-carousel.svelte';
+  import PickupTabbedCarousel from '../core/pickup-tabbed-carousel.svelte';
 </script>
 
 <Hero />
 <ContentSectionWithHeading sectionName="Regions" />
-{#each pickupList as pickup}
-  <PickupService pickupInfo={pickup} />
-{/each}
-<PickupCarousel />
+<PickupTabbedCarousel />
 <ContentSectionWithHeading sectionName="About Us" />
 <ContentSectionWithHeading sectionName="Updates" />

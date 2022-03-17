@@ -18,7 +18,7 @@
   </div>
 </a>
 
-<style>
+<style lang="scss">
   button {
     background: none;
     border: none;
