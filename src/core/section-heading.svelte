@@ -57,7 +57,7 @@
     font-size: 240px;
     line-height: 1;
     text-transform: uppercase;
-    font-family: 'Staatliches-Regular';
+    font-family: 'Staatliches';
     letter-spacing: 32px;
     color: #0a1a33;
     text-shadow: 0.5px 0.5px 0 #3a6092, -0.5px -0.5px 0 #3a6092, 0.5px -0.5px 0 #3a6092,

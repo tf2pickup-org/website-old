@@ -10,7 +10,7 @@
 
 <style lang="scss">
   @font-face {
-    font-family: 'Staatliches-Regular';
+    font-family: 'Staatliches';
     src: url('../static/fonts/Staatliches-Regular.woff') format('woff'),
       url('../static/fonts/Staatliches-Regular.woff2') format('woff2');
     font-weight: normal;

@@ -25,7 +25,7 @@
     justify-content: center;
     align-items: center;
     flex: 1;
-    background-image: url('images//main-bg-img.jpg');
+    background-image: url('../images/main-bg-img.jpg');
     background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat;
