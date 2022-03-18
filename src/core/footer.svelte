@@ -2,7 +2,7 @@
   <div class="footer-left">
     <a href="index.html" aria-current="page" class="navbar-logo footer-nav w-nav-brand w--current"
       ><img
-        src="images/tf2pickup-pl-logo.png"
+        src="../images/tf2pickup-pl-logo.png"
         loading="lazy"
         alt="Tf2pickup logo - Poland"
         class="navbar-logo-img"

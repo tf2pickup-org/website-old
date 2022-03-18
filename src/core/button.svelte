@@ -5,7 +5,7 @@
 
 <a href={destination} class="playnow-btn inline-block">
   <p class="playnow-p">{text}</p>
-  <img src="images/arrow-right-svg.svg" loading="lazy" alt="Arrow right" class="playnow-img" />
+  <img src="../images/arrow-right-svg.svg" loading="lazy" alt="Arrow right" class="playnow-img" />
   <div class="playnow-dot" />
 </a>
 
@@ -18,7 +18,7 @@
     justify-content: center;
     align-items: center;
     flex: 0 0 auto;
-    background-image: url('images/playnow-cta-svg.svg');
+    background-image: url('../images/playnow-cta-svg.svg');
     background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat;

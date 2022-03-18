@@ -7,7 +7,7 @@
     <div class="navbar-items">
       <a href="/" aria-current="page" class="navbar-logo w-nav-brand w--current">
         <img
-          src="images/tf2pickup-pl-logo.png"
+          src="../images/tf2pickup-pl-logo.png"
           loading="lazy"
           alt="tf2pickup.org logo"
           class="navbar-logo-img"
@@ -31,7 +31,7 @@
         <div class="navbar-buttons">
           <a href="/#regions" class="navbar-regions-btn inline-block">
             <img
-              src="images/regions-img.png"
+              src="../images/regions-img.png"
               loading="lazy"
               alt="Regions icon"
               class="navbar-regions-btn-img"

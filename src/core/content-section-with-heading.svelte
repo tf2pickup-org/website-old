@@ -37,7 +37,6 @@
 <style lang="scss">
   .homepage-section {
     position: relative;
-    min-height: 100vh;
     padding-top: 100px;
     padding-bottom: 100px;
   }
@@ -55,7 +54,7 @@
     position: absolute;
     left: 0%;
     top: 0%;
-    right: 0%;
+    right: -15%;
     bottom: 0%;
     z-index: 10;
   }
@@ -70,16 +69,6 @@
     background-image: linear-gradient(180deg, #0a1a33 5%, transparent 30%),
       linear-gradient(180deg, transparent 70%, #0a1a33 95%),
       linear-gradient(90deg, #0a1a33 50%, transparent 75%);
-  }
-
-  .main-container {
-    position: relative;
-    z-index: 100;
-    max-width: 1440px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: 20px;
-    padding-left: 20px;
   }
 
   .section-bg {
