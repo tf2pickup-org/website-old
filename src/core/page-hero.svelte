@@ -1,9 +1,9 @@
 <script>
-  export let pageTitle
+  export let pageTitle;
 </script>
 
 <section>
-  <h1 class="subpage-h1">{ pageTitle }</h1>
+  <h1 class="subpage-h1">{pageTitle}</h1>
 </section>
 
 <style>
