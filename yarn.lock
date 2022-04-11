@@ -445,7 +445,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autoprefixer@npm:^10.4.2":
+"autoprefixer@npm:10.4.2":
   version: 10.4.2
   resolution: "autoprefixer@npm:10.4.2"
   dependencies:
@@ -1255,7 +1255,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-prettier@npm:^8.3.0":
+"eslint-config-prettier@npm:8.4.0":
   version: 8.4.0
   resolution: "eslint-config-prettier@npm:8.4.0"
   peerDependencies:
@@ -1266,7 +1266,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-svelte3@npm:^3.2.1":
+"eslint-plugin-svelte3@npm:3.4.0":
   version: 3.4.0
   resolution: "eslint-plugin-svelte3@npm:3.4.0"
   peerDependencies:
@@ -1309,7 +1309,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^7.32.0":
+"eslint@npm:7.32.0":
   version: 7.32.0
   resolution: "eslint@npm:7.32.0"
   dependencies:
@@ -2008,7 +2008,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mdsvex@npm:^0.10.5":
+"mdsvex@npm:0.10.5":
   version: 0.10.5
   resolution: "mdsvex@npm:0.10.5"
   dependencies:
@@ -2416,7 +2416,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.4.6":
+"postcss@npm:8.4.6, postcss@npm:^8.4.6":
   version: 8.4.6
   resolution: "postcss@npm:8.4.6"
   dependencies:
@@ -2434,7 +2434,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier-plugin-svelte@npm:^2.5.0":
+"prettier-plugin-svelte@npm:2.6.0":
   version: 2.6.0
   resolution: "prettier-plugin-svelte@npm:2.6.0"
   peerDependencies:
@@ -2444,7 +2444,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.5.1":
+"prettier@npm:2.5.1":
   version: 2.5.1
   resolution: "prettier@npm:2.5.1"
   bin:
@@ -2673,7 +2673,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.46.0":
+"sass@npm:1.49.8":
   version: 1.49.8
   resolution: "sass@npm:1.49.8"
   dependencies:
@@ -2891,7 +2891,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svelte-carousel@npm:^1.0.17-rc4":
+"svelte-carousel@npm:1.0.17-rc4":
   version: 1.0.17-rc4
   resolution: "svelte-carousel@npm:1.0.17-rc4"
   dependencies:
@@ -2909,7 +2909,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svelte-preprocess@npm:^4.10.1":
+"svelte-preprocess@npm:4.10.3":
   version: 4.10.3
   resolution: "svelte-preprocess@npm:4.10.3"
   dependencies:
@@ -2958,7 +2958,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svelte@npm:^3.44.0":
+"svelte@npm:3.46.4":
   version: 3.46.4
   resolution: "svelte@npm:3.46.4"
   checksum: 929e6790cdd6d94c123b4b8a7b5a541164dbea6d4f4ed311f4e65cde60caa1c704e531bbf2e63519d1a96163cd3f812c6e5be5b2fd05f72d0177af5fd8ca8637
@@ -2978,7 +2978,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:^3.0.23":
+"tailwindcss@npm:3.0.23":
   version: 3.0.23
   resolution: "tailwindcss@npm:3.0.23"
   dependencies:
@@ -3040,19 +3040,19 @@ __metadata:
   dependencies:
     "@sveltejs/adapter-auto": next
     "@sveltejs/kit": next
-    autoprefixer: ^10.4.2
-    eslint: ^7.32.0
-    eslint-config-prettier: ^8.3.0
-    eslint-plugin-svelte3: ^3.2.1
-    mdsvex: ^0.10.5
-    postcss: ^8.4.6
-    prettier: ^2.5.1
-    prettier-plugin-svelte: ^2.5.0
-    sass: ^1.46.0
-    svelte: ^3.44.0
-    svelte-carousel: ^1.0.17-rc4
-    svelte-preprocess: ^4.10.1
-    tailwindcss: ^3.0.23
+    autoprefixer: 10.4.2
+    eslint: 7.32.0
+    eslint-config-prettier: 8.4.0
+    eslint-plugin-svelte3: 3.4.0
+    mdsvex: 0.10.5
+    postcss: 8.4.6
+    prettier: 2.5.1
+    prettier-plugin-svelte: 2.6.0
+    sass: 1.49.8
+    svelte: 3.46.4
+    svelte-carousel: 1.0.17-rc4
+    svelte-preprocess: 4.10.3
+    tailwindcss: 3.0.23
   languageName: unknown
   linkType: soft
 
