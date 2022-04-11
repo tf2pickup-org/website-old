@@ -26,6 +26,7 @@
         console.log('pickup =>', pickup);
       })
       .catch((error) => {
+        console.error(error);
         pickup = {};
       });
   });

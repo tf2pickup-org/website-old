@@ -1,5 +1,5 @@
 const getPath = (path, prefix = '') => {
-  const regex = /([\/\w\-]+?)(\/index)?\.\w+/;
+  const regex = /([/\w-]+?)(\/index)?\.\w+/;
   return prefix + path.match(regex)[1];
 };
 
