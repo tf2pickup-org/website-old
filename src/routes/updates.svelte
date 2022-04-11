@@ -11,8 +11,7 @@
 ---->
 <script>
   import PageHero from '../core/page-hero.svelte';
-
-  import globToArray from '../utils/globToArray.js';
+  import { globToArray } from '../utils/glob-to-array.js';
 
   const modules = import.meta.globEager('../routes/updates/*.md');
   console.log(modules);
