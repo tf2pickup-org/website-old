@@ -2929,9 +2929,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svelte-preprocess@npm:4.10.3":
-  version: 4.10.3
-  resolution: "svelte-preprocess@npm:4.10.3"
+"svelte-preprocess@npm:4.10.5":
+  version: 4.10.5
+  resolution: "svelte-preprocess@npm:4.10.5"
   dependencies:
     "@types/pug": ^2.0.4
     "@types/sass": ^1.16.0
@@ -2974,7 +2974,7 @@ __metadata:
       optional: true
     typescript:
       optional: true
-  checksum: 6efe8e56edc54d8817950cfc12068f0379feaa576ee9621931b710af18d1d86e931f041f716c31eb8b10dd620ba187894d6b262f0a0f89cc227b32cc61ebef5c
+  checksum: c65f72fe58ce882380583dc14037c6ac89d4e4130113e579e3c237cf632016a9c617da91f49f92fc9c313545a177103b50250c2687a1747486cc8b526c725ffb
   languageName: node
   linkType: hard
 
@@ -3071,7 +3071,7 @@ __metadata:
     sass: 1.49.8
     svelte: 3.46.4
     svelte-carousel: 1.0.17-rc4
-    svelte-preprocess: 4.10.3
+    svelte-preprocess: 4.10.5
     tailwindcss: 3.0.23
   languageName: unknown
   linkType: soft
