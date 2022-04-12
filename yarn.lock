@@ -2693,16 +2693,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:1.49.8":
-  version: 1.49.8
-  resolution: "sass@npm:1.49.8"
+"sass@npm:1.50.0":
+  version: 1.50.0
+  resolution: "sass@npm:1.50.0"
   dependencies:
     chokidar: ">=3.0.0 <4.0.0"
     immutable: ^4.0.0
     source-map-js: ">=0.6.2 <2.0.0"
   bin:
     sass: sass.js
-  checksum: ff4051c11223cb6e56ae62fa71448ed65b402949facfbd831f9781244eece9f1d22be45e61af8e0d0fbe186857de2613b07d9247b036ac2326c24e6ebd19bbbe
+  checksum: 43738cc83a3921731456f769aba190277f0620f8b80c14426ab098be9ab8dc8465957f5bf2edbcffda189edb3024ed83dee2cb8cd580459ca4984a9fc88c18f7
   languageName: node
   linkType: hard
 
@@ -3068,7 +3068,7 @@ __metadata:
     postcss: 8.4.12
     prettier: 2.6.2
     prettier-plugin-svelte: 2.7.0
-    sass: 1.49.8
+    sass: 1.50.0
     svelte: 3.46.4
     svelte-carousel: 1.0.17-rc4
     svelte-preprocess: 4.10.5
