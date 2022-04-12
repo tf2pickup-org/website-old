@@ -1266,13 +1266,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-svelte3@npm:3.4.0":
-  version: 3.4.0
-  resolution: "eslint-plugin-svelte3@npm:3.4.0"
+"eslint-plugin-svelte3@npm:3.4.1":
+  version: 3.4.1
+  resolution: "eslint-plugin-svelte3@npm:3.4.1"
   peerDependencies:
     eslint: ">=6.0.0"
     svelte: ^3.2.0
-  checksum: 3b35cb1d5e3232a7b58ed694146df6fa0cabeafde1f3d7bc98555d2b9f517f2285df97e2e6394ed070bf1699f78b4c2fa03c1220fedd8202c693a196b9d49598
+  checksum: 49483ab87285d62951eb3ba2aa6b896a96b174e907a1cf6ee7a98dccda83c86b285f295dcf19bc463ee087d7c2ebb5c179953b7c4bddb001cb7fa337bf5cd304
   languageName: node
   linkType: hard
 
@@ -3043,7 +3043,7 @@ __metadata:
     autoprefixer: 10.4.4
     eslint: 7.32.0
     eslint-config-prettier: 8.4.0
-    eslint-plugin-svelte3: 3.4.0
+    eslint-plugin-svelte3: 3.4.1
     mdsvex: 0.10.5
     postcss: 8.4.6
     prettier: 2.5.1
