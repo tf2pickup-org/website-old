@@ -2697,12 +2697,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svelte-carousel@npm:1.0.18":
-  version: 1.0.18
-  resolution: "svelte-carousel@npm:1.0.18"
+"svelte-carousel@npm:1.0.19":
+  version: 1.0.19
+  resolution: "svelte-carousel@npm:1.0.19"
   dependencies:
     simply-reactive: "github:vadimkorr/simply-reactive#1.0.2"
-  checksum: e13f5608a92d2b9fa549e27cbbd70be9f0fbe527f8a3dc8ffe248351a1826b431853c487bc2d156696fe21948d1997308246e3b0b62af08f174114559ce393cf
+  checksum: dbf293ee7899a53ef2103a6b53120b1a72863925230d79baf355583d88d045b70c0aae613c43eaa60afab8665e78479ce4bf6fb9281189924bafe1626f3ad9c8
   languageName: node
   linkType: hard
 
@@ -2842,7 +2842,7 @@ __metadata:
     prettier-plugin-svelte: 2.7.0
     sass: 1.51.0
     svelte: 3.48.0
-    svelte-carousel: 1.0.18
+    svelte-carousel: 1.0.19
     svelte-preprocess: 4.10.6
     tailwindcss: 3.0.24
   languageName: unknown
