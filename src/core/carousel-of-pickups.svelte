@@ -2,7 +2,6 @@
   import PickupService from '../core/pickup-service.svelte';
   import CarouselSlideNavButton from '../core/carousel-slide-nav-button.svelte';
   export let pickups;
-  export let region;
 
   import { onMount } from 'svelte';
 
