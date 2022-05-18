@@ -20,14 +20,13 @@
   let currentYear = new Date().getFullYear()
 
   let postsByYear = () => {
-    let currentYear = new Date().getFullYear()
     return {
       'thisYear': posts.filter(post => post.metadata.date.substring(0,4) == currentYear),
       'lastYear': posts.filter(post => post.metadata.date.substring(0,4) == (currentYear - 1)),
-      '2YAgo': posts.filter(post => post.metadata.date.substring(0,4) == (currentYear - 2)),
-      '3YAgo': posts.filter(post => post.metadata.date.substring(0,4) == (currentYear - 3)),
-      '4YAgo': posts.filter(post => post.metadata.date.substring(0,4) == (currentYear - 4)),
-      '5YAgo': posts.filter(post => post.metadata.date.substring(0,4) == (currentYear - 5)),
+      'twoYearsAgo': posts.filter(post => post.metadata.date.substring(0,4) == (currentYear - 2)),
+      'threeYearsAgo': posts.filter(post => post.metadata.date.substring(0,4) == (currentYear - 3)),
+      'fourYearsAgo': posts.filter(post => post.metadata.date.substring(0,4) == (currentYear - 4)),
+      'fiveYearsAgo': posts.filter(post => post.metadata.date.substring(0,4) == (currentYear - 5)),
     }
   }
   console.log('tt',postsByYear())
@@ -40,14 +39,42 @@
 </svelte:head>
 
 <PageHero pageTitle="Updates" />
-{#each posts as post}
-  {#if checkYear(post.metadata.date) === '2022'}
-    2022
-    <UpdateEntryTile post={post}/>
-  {:else}
-    {#if checkYear(post.metadata.date) === '2021'}
-      2021
+{#if postsByYear().thisYear.length > 0}
+<div class="updates-year">
+  <div class="updates-left">
+    <p class="update-year">{currentYear}</p>
+  </div>
+  <div class="updates-divider"></div>
+  <div class="update-right">
+    {#each postsByYear().thisYear as post}
       <UpdateEntryTile post={post}/>
-    {/if}
-  {/if}
-{/each}
+    {/each}
+  </div>
+</div>
+{/if}
+{#if postsByYear().lastYear.length > 0}
+<div class="updates-year">
+  <div class="updates-left">
+    <p class="update-year">{currentYear - 1}</p>
+  </div>
+  <div class="updates-divider"></div>
+  <div class="update-right">
+    {#each postsByYear().lastYear as post}
+      <UpdateEntryTile post={post}/>
+    {/each}
+  </div>
+</div>
+{/if}
+{#if postsByYear().twoYearsAgo.length > 0}
+<div class="updates-year">
+  <div class="updates-left">
+    <p class="update-year">{currentYear - 2}</p>
+  </div>
+  <div class="updates-divider"></div>
+  <div class="update-right">
+    {#each postsByYear().twoYearsAgo as post}
+      <UpdateEntryTile post={post}/>
+    {/each}
+  </div>
+</div>
+{/if}
