@@ -2,6 +2,7 @@
   import PageHero from '../core/page-hero.svelte';
   import UpdateEntryTile from '../core/update-entry-tile.svelte';
   import { globToArray } from '../utils/glob-to-array.js';
+  import Dots from '../core/dots.svelte'
 
   const modules = import.meta.globEager('../routes/updates/*.md');
 
@@ -27,6 +28,8 @@
 </svelte:head>
 
 <PageHero pageTitle="Updates" />
+<div class="subpage-content-wrapper">
+<Dots/>
 {#if postsByYear().thisYear.length > 0}
   <div class="updates-year">
     <div class="updates-left">
@@ -66,3 +69,47 @@
     </div>
   </div>
 {/if}
+</div>
+<style lang="scss">
+  .subpage-content-wrapper {
+    position: relative;
+    max-width: 1400px;
+    margin-top: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 80px;
+    border-radius: 5px;
+    background-color: rgba(10, 26, 51, 0.6);
+  }
+  .updates-year {
+    display: flex;
+    margin-top: 80px;
+    justify-content: space-between;
+  }
+  .updates-left {
+    position: relative;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  .update-year {
+    position: sticky;
+    top: 80px;
+    bottom: 80px;
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .update-right {
+    padding-bottom: 80px;
+    flex: 1;
+  }
+  .updates-divider {
+    width: 1px;
+    height: auto;
+    margin-right: 80px;
+    margin-left: 80px;
+    background-color: hsla(0, 0%, 100%, 0.5);
+  }
+  .update-date {
+    color: hsla(0, 0%, 100%, 0.8);
+  }
+</style>

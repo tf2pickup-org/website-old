@@ -15,9 +15,6 @@
 
 <style lang="scss">
   .update-lines {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
     margin-top: 80px;
   }
