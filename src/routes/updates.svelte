@@ -12,12 +12,12 @@
 
   let postsByYear = () => {
     return {
-      thisYear: posts.filter((post) => post.metadata.date.substring(0, 4) == currentYear),
-      lastYear: posts.filter((post) => post.metadata.date.substring(0, 4) == currentYear - 1),
-      twoYearsAgo: posts.filter((post) => post.metadata.date.substring(0, 4) == currentYear - 2),
-      threeYearsAgo: posts.filter((post) => post.metadata.date.substring(0, 4) == currentYear - 3),
-      fourYearsAgo: posts.filter((post) => post.metadata.date.substring(0, 4) == currentYear - 4),
-      fiveYearsAgo: posts.filter((post) => post.metadata.date.substring(0, 4) == currentYear - 5),
+      thisYear: posts.filter((post) => post.metadata.date.substring(0, 4) == currentYear).sort(function(p,d) { return new Date(d.metadata.date) - new Date(p.metadata.date) }),
+      lastYear: posts.filter((post) => post.metadata.date.substring(0, 4) == currentYear - 1).sort(function(p,d) { return new Date(d.metadata.date) - new Date(p.metadata.date) }),
+      twoYearsAgo: posts.filter((post) => post.metadata.date.substring(0, 4) == currentYear - 2).sort(function(p,d) { return new Date(d.metadata.date) - new Date(p.metadata.date) }),
+      threeYearsAgo: posts.filter((post) => post.metadata.date.substring(0, 4) == currentYear - 3).sort(function(p,d) { return new Date(d.metadata.date) - new Date(p.metadata.date) }),
+      fourYearsAgo: posts.filter((post) => post.metadata.date.substring(0, 4) == currentYear - 4).sort(function(p,d) { return new Date(d.metadata.date) - new Date(p.metadata.date) }),
+      fiveYearsAgo: posts.filter((post) => post.metadata.date.substring(0, 4) == currentYear - 5).sort(function(p,d) { return new Date(d.metadata.date) - new Date(p.metadata.date) }),
     };
   };
   let checkYear = (date) => date.substring(0, 4);
@@ -69,7 +69,21 @@
     </div>
   </div>
 {/if}
+  {#if postsByYear().twoYearsAgo.length > 0}
+    <div class="updates-year">
+      <div class="updates-left">
+        <p class="update-year">{currentYear - 3}</p>
+      </div>
+      <div class="updates-divider" />
+      <div class="update-right">
+        {#each postsByYear().twoYearsAgo as post}
+          <UpdateEntryTile {post} />
+        {/each}
+      </div>
+    </div>
+  {/if}
 </div>
+
 <style lang="scss">
   .subpage-content-wrapper {
     position: relative;
