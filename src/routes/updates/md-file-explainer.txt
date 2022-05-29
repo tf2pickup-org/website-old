@@ -1,0 +1,34 @@
+Posts are generated from md files via mdsvex,
+Following is the explainer of how to use .md files to generate posts properly
+One should use the following layout for the file:
+- data header
+- content
+
+Data Header: This section of the .md file is mandatory and allows to render entry tile on the front end,
+every property is required and some have their caveats following is the explainer of these:
+
+layout: specifies the layout that the entry uses, as of now it's 'updates' if/when more is required this will change
+check mdsvex docs to familiarize yourself with the concept is necessary
+title: Title of the entry, only used to display it on the entry tile, on /updates page
+version: Version of the pickup entry is about/prom, just a string, will be displayed on the entry tile on /updates page
+date: Date in format YYYY-MM-DD, used to group entries by date, and sort
+categories: Categories that entry belongs to, for now, it is a 1 element array of [updates] that may change in the future, will allow
+for filtering in the future if need be
+slug: it is important that the name of the file and slug is exactly the same. otherwise, there will be a 404.
+
+
+Content: You can use markdown as you would normally
+
+Following is a sort template of the .md file
+
+---
+layout: updates
+title: 'Super fancy Title'
+version: '0.1.0H'
+date: '2022-03-21'
+categories: [updates]
+slug: name-of-the-file-is-a-slug
+---
+
+# Content
+## Very important content
