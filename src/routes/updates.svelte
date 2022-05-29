@@ -2,8 +2,7 @@
   import PageHero from '../core/page-hero.svelte';
   import UpdateEntryTile from '../core/update-entry-tile.svelte';
   import { globToArray } from '../utils/glob-to-array.js';
-  import Dots from '../core/dots.svelte'
-
+  import SubpageWrapper from '../core/subpage-wrapper.svelte'
   const modules = import.meta.globEager('../routes/updates/*.md');
 
   console.log(modules);
@@ -26,10 +25,8 @@
 <svelte:head>
   <title>Updates | tf2pickup.org</title>
 </svelte:head>
+<SubpageWrapper pageTitle="Updates">
 
-<PageHero pageTitle="Updates" />
-<div class="subpage-content-wrapper">
-<Dots/>
 {#if postsByYear().thisYear.length > 0}
   <div class="updates-year">
     <div class="updates-left">
@@ -82,19 +79,8 @@
       </div>
     </div>
   {/if}
-</div>
-
+</SubpageWrapper>
 <style lang="scss">
-  .subpage-content-wrapper {
-    position: relative;
-    max-width: 1400px;
-    margin-top: 30px;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 80px;
-    border-radius: 5px;
-    background-color: rgba(10, 26, 51, 0.6);
-  }
   .updates-year {
     display: flex;
     margin-top: 80px;

@@ -4,7 +4,7 @@ title: 'Placeholder 2'
 version: '0.1.0H'
 date: '2020-02-22'
 categories: [updates]
-slug: placeholder-2
+slug: placeholder-file-two
 ---
 
 # Placeholder 2

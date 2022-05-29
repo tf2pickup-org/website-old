@@ -4,7 +4,7 @@ title: 'Placeholder 1'
 version: '0.1.0H'
 date: '2019-02-22'
 categories: [updates]
-slug: placeholder-1
+slug: placeholder-file
 ---
 
 # Placeholder
