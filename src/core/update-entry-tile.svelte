@@ -8,7 +8,6 @@
   <h2 class="update-title">{post.metadata.title}</h2>
   <p class="update-content">{post.metadata.excerpt}</p>
   <Button destination="/updates/{post.metadata.slug}" text="Read More"/>
-  <a class="update-read-more-btn" href="/updates/{post.metadata.slug}">Read more</a>
   <div class="update-lines">
     <div class="update-line-first" />
     <div class="update-line-second" />
@@ -34,6 +33,9 @@
   }
   .update-date {
     color: hsla(0, 0%, 100%, 0.8);
+  }
+  .update-content {
+    margin-bottom: 16px;
   }
   .updates-year {
     display: -webkit-box;

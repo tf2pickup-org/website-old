@@ -1,5 +1,4 @@
 <script>
-  import PageHero from '../core/page-hero.svelte';
   import UpdateEntryTile from '../core/update-entry-tile.svelte';
   import { globToArray } from '../utils/glob-to-array.js';
   import SubpageWrapper from '../core/subpage-wrapper.svelte'

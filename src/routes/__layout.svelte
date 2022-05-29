@@ -4,6 +4,7 @@
   import Footer from '../core/footer.svelte';
 </script>
 
+<!----ttt---->
 <NavigationBar />
 <slot />
 <Footer />
@@ -26,5 +27,10 @@
     margin-left: auto;
     padding-right: 20px;
     padding-left: 20px;
+  }
+  :global(body > div) {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
   }
 </style>

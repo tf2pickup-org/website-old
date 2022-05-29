@@ -29,9 +29,6 @@
 
 <style lang="scss">
   .footer {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
     padding: 20px;
     justify-content: space-between;
@@ -39,18 +36,12 @@
   }
 
   .footer-left {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
     align-items: center;
     flex: 0 0 auto;
   }
 
   .footer-right {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
   }
 
