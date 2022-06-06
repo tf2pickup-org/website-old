@@ -5,17 +5,18 @@
 
   import { onMount } from 'svelte';
 
-  let Carousel; // for saving Carousel component class
+  let carouselComponent; // for saving Carousel component class
   let carousel; // for calling methods of the carousel instance
 
   onMount(async () => {
     const module = await import('svelte-carousel');
-    Carousel = module.default;
+    carouselComponent = module.default;
   });
 
   function goToPrevPage() {
     carousel.goToPrev();
   }
+
   function goToNextPage() {
     carousel.goToNext();
   }
@@ -35,14 +36,14 @@
 <div class="carousel-wrapper">
   <div class="region-slider-wrapper w-slider">
     <div class="region-slider-mask w-slider-mask">
-      <svelte:component this={Carousel} bind:this={carousel} let:showPrevPage let:showNextPage>
+      <svelte:component this={carouselComponent} bind:this={carousel} let:showPrevPage let:showNextPage>
         <div class="slide-navigation-button" slot="prev" on:click={goToPrevPage}>
           <CarouselSlideNavButton direction="left" />
         </div>
         {#each pickupGrouped as group, i}
           <div class="slide-{i} region-slide w-slide">
             <div class="region-slide-layout">
-              {#each group as pickup, i}
+              {#each group as pickup}
                 <PickupService endpoint={pickup.apiUrl} link={pickup.link} />
               {/each}
             </div>

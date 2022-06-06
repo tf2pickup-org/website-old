@@ -2,8 +2,8 @@
   import { Tabs, TabList, TabPanel, Tab } from '../utils/tabs.js';
   import { pickupList } from '../utils/pickup-list.js';
   import CarouselOfPickups from '../core/carousel-of-pickups.svelte';
-  let pickupsEU = pickupList.filter((item) => item.region === 'EU');
-  let pickupsCIS = pickupList.filter((item) => item.region === 'CIS');
+  let pickupsEu = pickupList.filter((item) => item.region === 'EU');
+  let pickupsCis = pickupList.filter((item) => item.region === 'CIS');
   //If regions change edit here
   let activeRegions = () => {
     return {
@@ -26,10 +26,10 @@
         {#if activeRegions().AO > 0}<Tab>Asia & Oceania</Tab>{/if}
       </TabList>
       <TabPanel>
-        <CarouselOfPickups region="EU" pickups={pickupsEU} />
+        <CarouselOfPickups region="EU" pickups={pickupsEu} />
       </TabPanel>
       <TabPanel>
-        <CarouselOfPickups region="CIS" pickups={pickupsCIS} />
+        <CarouselOfPickups region="CIS" pickups={pickupsCis} />
       </TabPanel>
     </Tabs>
   </div>

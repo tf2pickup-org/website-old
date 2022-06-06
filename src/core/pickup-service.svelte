@@ -1,34 +1,24 @@
 <script>
   import Button from '../core/button.svelte';
   import { onMount } from 'svelte';
-  //let export endpoint
-  export let pickupInfo;
-  console.log(pickupInfo);
+
   export let endpoint;
-  export let link;
-  console.log('endpoint', endpoint);
-  //let export pickupLink
-  let pickupLink = link;
+  export let pickupLink;
+
   let pickup = {};
   onMount(async () => {
-    fetch(endpoint)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        let pickupData = {
-          players: data.slots.filter((slot) => slot.playerId != null).length,
-          playerSlots: data.slots.length,
-          map: data.mapVoteResults.reduce(function (prev, curr) {
-            return prev.voteCount > curr.voteCount ? prev : curr;
-          }).map,
-        };
-        pickup = pickupData;
-        console.log('pickup =>', pickup);
-      })
-      .catch((error) => {
-        console.error(error);
-        pickup = {};
-      });
+    try {
+      const data = await fetch(endpoint).then((response) => response.json());
+      pickup = {
+        players: data.slots.filter((slot) => !!slot.player).length,
+        playerSlots: data.slots.length,
+        map: data.mapVoteResults.reduce(function (prev, curr) {
+          return prev.voteCount > curr.voteCount ? prev : curr;
+        }).map,
+      };
+    } catch (error) {
+      console.log(error);
+    }
   });
   //TODO: Prepare images for each map, Edit it so background changes depending on the map currently wining votes
 </script>
