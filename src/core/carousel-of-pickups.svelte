@@ -1,6 +1,6 @@
 <script>
-  import PickupService from '../core/pickup-service.svelte';
-  import CarouselSlideNavButton from '../core/carousel-slide-nav-button.svelte';
+  import PickupPreview from './pickup-preview.svelte';
+  import CarouselSlideNavButton from './carousel-slide-nav-button.svelte';
   export let pickups;
 
   import { onMount } from 'svelte';
@@ -46,7 +46,7 @@
           <div class="slide-{i} region-slide w-slide">
             <div class="region-slide-layout">
               {#each group as pickup}
-                <PickupService pickupData={pickup} />
+                <PickupPreview pickupData={pickup} />
               {/each}
             </div>
           </div>
