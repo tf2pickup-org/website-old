@@ -26,9 +26,8 @@ const config = {
   },
   preprocess: [
     preprocess({
-      scss: {
-        prependData: '@use "src/variables.scss" as *;',
-      },
+      typescript: false,
+      scss: false,
     }),
     mdsvex({
       extensions: ['.md'],
@@ -37,6 +36,9 @@ const config = {
       },
     }),
   ],
+  experimental: {
+    useVitePreprocess: true,
+  },
 };
 
 export default config;

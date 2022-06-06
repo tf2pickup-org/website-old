@@ -1,14 +1,14 @@
 <script>
-  import PageHero from '../core/page-hero.svelte'
-  import Dots from '../core/dots.svelte'
-  export let pageTitle
+  import PageHero from '../core/page-hero.svelte';
+  import Dots from '../core/dots.svelte';
+  export let pageTitle;
 </script>
 
 <div class="subpage-section-content">
-  <PageHero pageTitle={ pageTitle } />
+  <PageHero {pageTitle} />
   <div class="subpage-content-wrapper">
-    <Dots/>
-    <slot/>
+    <Dots />
+    <slot />
   </div>
 </div>
 

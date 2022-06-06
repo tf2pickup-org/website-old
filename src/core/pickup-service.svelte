@@ -20,9 +20,9 @@
 
   onMount(async () => {
     try {
-      const data = await fetch(`${pickupData.apiUrl}/queue`).then((response) => response.json());
+      const data = await fetch(`${pickupData.apiUrl}/queue`).then(response => response.json());
       pickupStatus = {
-        players: data.slots.filter((slot) => !!slot.player).length,
+        players: data.slots.filter(slot => !!slot.player).length,
         playerSlots: data.slots.length,
         map: data.mapVoteResults.reduce(function (prev, curr) {
           return prev.voteCount > curr.voteCount ? prev : curr;
@@ -36,17 +36,13 @@
 
 <a href={pickupData.link} class="region-slide-item w-inline-block" target="_blank">
   <div class="rs-top">
-    <img
-      loading="lazy"
-      src={pickupData.logo}
-      alt={pickupData.name}
-      class="rs-logo"
-    />
+    <img loading="lazy" src={pickupData.logo} alt={pickupData.name} class="rs-logo" />
   </div>
   <div class="rs-mid">
     <div class="rs-players">
       <div class="rs-players-info">
-        PLAYERS: <span class="rs-current-players">{pickupStatus.players}</span>/{pickupStatus.playerSlots}
+        PLAYERS: <span class="rs-current-players">{pickupStatus.players}</span
+        >/{pickupStatus.playerSlots}
       </div>
     </div>
     <!-- TODO Add proper map thumbnails -->

@@ -25,7 +25,7 @@
 
   const pickupGrouped = pickups.reduce((arr, item, index) => {
     const groupIndex = Math.floor(index / pickupsPerSlide);
-    arr[groupIndex] = [ ...(arr[groupIndex] ?? []), item ];
+    arr[groupIndex] = [...(arr[groupIndex] ?? []), item];
     return arr;
   }, []);
 </script>
@@ -33,7 +33,12 @@
 <div class="carousel-wrapper">
   <div class="region-slider-wrapper w-slider">
     <div class="region-slider-mask w-slider-mask">
-      <svelte:component this={carouselComponent} bind:this={carousel} let:showPrevPage let:showNextPage>
+      <svelte:component
+        this={carouselComponent}
+        bind:this={carousel}
+        let:showPrevPage
+        let:showNextPage
+      >
         <div class="slide-navigation-button" slot="prev" on:click={goToPrevPage}>
           <CarouselSlideNavButton direction="left" />
         </div>

@@ -1,6 +1,6 @@
 <div class="dots-wrapper">
-  <div class="dot-left"></div>
-  <div class="line-mid"></div>
+  <div class="dot-left" />
+  <div class="line-mid" />
 </div>
 
 <style>

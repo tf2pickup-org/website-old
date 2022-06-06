@@ -1,8 +1,5 @@
 <script>
-  import SubpageWrapper from '../core/subpage-wrapper.svelte'
+  import SubpageWrapper from '../core/subpage-wrapper.svelte';
 </script>
 
-
-
-<SubpageWrapper pageTitle="About">
-</SubpageWrapper>
+<SubpageWrapper pageTitle="About" />

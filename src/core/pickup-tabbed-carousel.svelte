@@ -24,11 +24,12 @@
       designator: 'AO',
       name: 'Asia & Oceania',
     },
-  ].map(({ designator, name }) => ({
-    designator,
-    name,
-    pickups: pickupList.filter((pickup) => pickup.region === designator),
-  }))
+  ]
+    .map(({ designator, name }) => ({
+      designator,
+      name,
+      pickups: pickupList.filter(pickup => pickup.region === designator),
+    }))
     .filter(({ pickups }) => pickups.length > 0);
 </script>
 

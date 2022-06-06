@@ -1,5 +1,5 @@
 <script>
-  import Button from '../core/button.svelte'
+  import Button from '../core/button.svelte';
   export let post;
 </script>
 
@@ -7,7 +7,7 @@
   <p class="update-date">{post.metadata.date} - {post.metadata.version}</p>
   <h2 class="update-title">{post.metadata.title}</h2>
   <p class="update-content">{post.metadata.excerpt}</p>
-  <Button destination="/updates/{post.metadata.slug}" text="Read More"/>
+  <Button destination="/updates/{post.metadata.slug}" text="Read More" />
   <div class="update-lines">
     <div class="update-line-first" />
     <div class="update-line-second" />
