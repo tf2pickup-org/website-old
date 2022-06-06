@@ -2,35 +2,50 @@
   import { Tabs, TabList, TabPanel, Tab } from '../utils/tabs.js';
   import { pickupList } from '../utils/pickup-list.js';
   import CarouselOfPickups from '../core/carousel-of-pickups.svelte';
-  let pickupsEu = pickupList.filter((item) => item.region === 'EU');
-  let pickupsCis = pickupList.filter((item) => item.region === 'CIS');
-  //If regions change edit here
-  let activeRegions = () => {
-    return {
-      EU: pickupList.filter((pickup) => pickup.region === 'EU').length,
-      CIS: pickupList.filter((pickup) => pickup.region === 'CIS').length,
-      NA: pickupList.filter((pickup) => pickup.region === 'NA').length,
-      AO: pickupList.filter((pickup) => pickup.region === 'AO').length,
-    };
-  };
-  console.log('asd > ', pickupList);
+
+  const activeRegions = [
+    {
+      designator: 'EU',
+      name: 'Europe',
+    },
+    {
+      designator: 'CIS',
+      name: 'Cis',
+    },
+    {
+      designator: 'NA',
+      name: 'North America',
+    },
+    {
+      designator: 'SA',
+      name: 'South America',
+    },
+    {
+      designator: 'AO',
+      name: 'Asia & Oceania',
+    },
+  ].map(({ designator, name }) => ({
+    designator,
+    name,
+    pickups: pickupList.filter((pickup) => pickup.region === designator),
+  }))
+    .filter(({ pickups }) => pickups.length > 0);
 </script>
 
 <div id="playNow" data-scroll="mid" class="regions-wrapper">
   <div class="main-container">
     <Tabs>
       <TabList>
-        {#if activeRegions().EU > 0}<Tab>Europe</Tab>{/if}
-        {#if activeRegions().CIS > 0} <Tab>Cis</Tab>{/if}
-        {#if activeRegions().NA > 0}<Tab>North America</Tab>{/if}
-        {#if activeRegions().AO > 0}<Tab>Asia & Oceania</Tab>{/if}
+        {#each activeRegions as region}
+          <Tab>{region.name}</Tab>
+        {/each}
       </TabList>
-      <TabPanel>
-        <CarouselOfPickups region="EU" pickups={pickupsEu} />
-      </TabPanel>
-      <TabPanel>
-        <CarouselOfPickups region="CIS" pickups={pickupsCis} />
-      </TabPanel>
+
+      {#each activeRegions as region}
+        <TabPanel>
+          <CarouselOfPickups pickups={region.pickups} />
+        </TabPanel>
+      {/each}
     </Tabs>
   </div>
 </div>

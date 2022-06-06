@@ -21,14 +21,11 @@
     carousel.goToNext();
   }
 
-  let pickupsPerSlide = 4;
+  const pickupsPerSlide = 4;
 
-  let pickupGrouped = pickups.reduce((arr, item, index) => {
+  const pickupGrouped = pickups.reduce((arr, item, index) => {
     const groupIndex = Math.floor(index / pickupsPerSlide);
-    if (!arr[groupIndex]) {
-      arr[groupIndex] = [];
-    }
-    arr[groupIndex].push(item);
+    arr[groupIndex] = [ ...(arr[groupIndex] ?? []), item ];
     return arr;
   }, []);
 </script>
@@ -44,7 +41,7 @@
           <div class="slide-{i} region-slide w-slide">
             <div class="region-slide-layout">
               {#each group as pickup}
-                <PickupService endpoint={pickup.apiUrl} link={pickup.link} />
+                <PickupService pickupData={pickup} />
               {/each}
             </div>
           </div>

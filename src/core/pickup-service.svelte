@@ -2,14 +2,26 @@
   import Button from '../core/button.svelte';
   import { onMount } from 'svelte';
 
-  export let endpoint;
-  export let pickupLink;
+  /**
+   * @type {object}
+   * @property {name} name
+   * @property {string} region
+   * @property {string} link
+   * @property {string} apiUrl
+   * @property {string} logo
+   */
+  export let pickupData;
 
-  let pickup = {};
+  let pickupStatus = {
+    players: 0,
+    playerSlots: 0,
+    map: null,
+  };
+
   onMount(async () => {
     try {
-      const data = await fetch(endpoint).then((response) => response.json());
-      pickup = {
+      const data = await fetch(`${pickupData.apiUrl}/queue`).then((response) => response.json());
+      pickupStatus = {
         players: data.slots.filter((slot) => !!slot.player).length,
         playerSlots: data.slots.length,
         map: data.mapVoteResults.reduce(function (prev, curr) {
@@ -17,27 +29,27 @@
         }).map,
       };
     } catch (error) {
-      console.log(error);
+      console.log(`${pickupData.name}: ${error}`);
     }
   });
-  //TODO: Prepare images for each map, Edit it so background changes depending on the map currently wining votes
 </script>
 
-<a href={pickupLink} class="region-slide-item w-inline-block">
+<a href={pickupData.link} class="region-slide-item w-inline-block" target="_blank">
   <div class="rs-top">
     <img
       loading="lazy"
-      src="images/tf2pickup-pl-logo.png"
-      alt="Tf2pickup logo - Poland"
+      src={pickupData.logo}
+      alt={pickupData.name}
       class="rs-logo"
     />
   </div>
   <div class="rs-mid">
     <div class="rs-players">
       <div class="rs-players-info">
-        PLAYERS: <span class="rs-current-players">{pickup.players}</span>/{pickup.playerSlots}
+        PLAYERS: <span class="rs-current-players">{pickupStatus.players}</span>/{pickupStatus.playerSlots}
       </div>
     </div>
+    <!-- TODO Add proper map thumbnails -->
     <img
       loading="lazy"
       src="images/maps/slider-map-preview.png"
@@ -46,7 +58,7 @@
     />
   </div>
   <div class="navbar-playnow-btn region-slider">
-    <Button destination={pickupLink} text="Play Now" />
+    <Button destination={pickupData.link} text="Play Now" />
   </div>
 </a>
 
