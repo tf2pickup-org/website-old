@@ -2122,7 +2122,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nanoid@npm:^3.3.3, nanoid@npm:^3.3.4":
+"nanoid@npm:^3.3.4":
   version: 3.3.4
   resolution: "nanoid@npm:3.3.4"
   bin:
@@ -2508,18 +2508,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:8.4.13":
-  version: 8.4.13
-  resolution: "postcss@npm:8.4.13"
-  dependencies:
-    nanoid: ^3.3.3
-    picocolors: ^1.0.0
-    source-map-js: ^1.0.2
-  checksum: 514fb3552805a5d039a2d6b4df3e73f657001716ca93c0d57e6067b0473abdea70276d80afc96005c9aaff82ed5d98062bd97724d3f47ca400fba0b5e9e436ed
-  languageName: node
-  linkType: hard
-
-"postcss@npm:^8.4.12, postcss@npm:^8.4.13":
+"postcss@npm:8.4.14, postcss@npm:^8.4.12, postcss@npm:^8.4.13":
   version: 8.4.14
   resolution: "postcss@npm:8.4.14"
   dependencies:
@@ -3241,7 +3230,7 @@ __metadata:
     eslint-config-prettier: 8.5.0
     eslint-plugin-svelte3: 4.0.0
     mdsvex: 0.10.6
-    postcss: 8.4.13
+    postcss: 8.4.14
     prettier: 2.6.2
     prettier-plugin-tailwindcss: 0.1.11
     sass: 1.51.0
