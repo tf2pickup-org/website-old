@@ -52,9 +52,4 @@
   .region-slider-arrow.right {
     margin-right: 15px;
   }
-
-  .region-slider-nav {
-    position: static;
-    display: none;
-  }
 </style>

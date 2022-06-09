@@ -14,7 +14,7 @@
         />
       </a>
       <div class="navbar-divider" />
-      <nav role="navigation" class="navbar-menu w-nav-menu">
+      <nav class="navbar-menu w-nav-menu">
         <div class="navbar-links-wrapper">
           <a href="/#Regions" class="navbar-link">Regions</a>
           <a href="/about-us" class="navbar-link">about us</a>
@@ -125,10 +125,6 @@
 
     &:hover {
       color: hsla(0, 0%, 100%, 0.7);
-    }
-
-    &.current {
-      color: #ffe497;
     }
 
     &.disabled-link {
