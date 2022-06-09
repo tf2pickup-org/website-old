@@ -67,10 +67,6 @@
     flex-direction: row;
     justify-content: center;
   }
-
-  .navbar-playnow-img.region-slider {
-    margin-left: 0px;
-  }
   .region-slide-item {
     height: 100%;
     flex: 0 0 23%;
@@ -108,16 +104,6 @@
     display: inline-block;
   }
 
-  .rs-btm {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    padding: 20px;
-    justify-content: center;
-    align-items: center;
-  }
-
   .rs-players {
     position: absolute;
     left: 0%;
@@ -134,19 +120,5 @@
     font-size: 18px;
     line-height: 20px;
     font-weight: 700;
-  }
-
-  .rsa-img {
-    transform: rotate(-45deg);
-  }
-
-  .w-slide {
-    position: relative;
-    display: inline-block;
-    vertical-align: top;
-    width: 100%;
-    height: 100%;
-    white-space: normal;
-    text-align: left;
   }
 </style>

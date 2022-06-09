@@ -51,10 +51,6 @@
     text-decoration: none;
   }
 
-  .footer-p.w--current {
-    color: #ffe497;
-  }
-
   .navbar-link {
     padding: 15px;
     transition: color 200ms ease;

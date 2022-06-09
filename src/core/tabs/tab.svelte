@@ -19,14 +19,6 @@
 </a>
 
 <style lang="scss">
-  button {
-    background: none;
-    border: none;
-    border-bottom: 2px solid white;
-    border-radius: 0;
-    margin: 0;
-    color: #ccc;
-  }
   .region-tab-link.w--current {
     border-bottom: 1px solid #fff;
     background-color: transparent;
