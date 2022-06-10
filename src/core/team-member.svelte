@@ -1,16 +1,27 @@
+<script>
+  import SocialMediaIcon from '../core/social-media-icon.svelte';
+
+  export let name;
+  export let socialMediaArray;
+  export let avatarUrl;
+</script>
+
 <div class="meet-the-team-item">
-  <img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="meet-the-team-item-img">
+  <img
+    src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg"
+    loading="lazy"
+    alt=""
+    class="meet-the-team-item-img"
+  />
   <div class="meeth-the-team-item-text">
-    <p class="meet-the-team-item-p">Ędward Ącki</p>
+    <p class="meet-the-team-item-p">{name}</p>
     <div class="meet-the-team-item-socials-wrapper">
-      <a href="#" class="meet-the-team-item-social w-inline-block"></a>
-      <a href="#" class="meet-the-team-item-social w-inline-block"></a>
-      <a href="#" class="meet-the-team-item-social w-inline-block"></a>
-      <a href="#" class="meet-the-team-item-social w-inline-block"></a>
+      {#each socialMediaArray as social}
+        <SocialMediaIcon name={social.name} link={social.link} />
+      {/each}
     </div>
   </div>
 </div>
-
 
 <style lang="scss">
   .meet-the-team-item {

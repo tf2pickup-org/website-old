@@ -1,17 +1,9 @@
 <script>
-  import TeamMember from '../core/team-member.svelte'
+  import TeamMember from '../core/team-member.svelte';
+  export let member;
+  let name = member.name;
+  let socialMediaArray = member.socialMediaLinks;
+  let avatarUrl = member.avatarUrl;
 </script>
 
-<h2 class="subpage-h2">MEET THE TEAM</h2>
-<TeamMember/>
-
-<style>
-  .subpage-h2 {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    font-family: Staatliches, sans-serif;
-    font-size: 45px;
-    line-height: 1;
-    text-align: center;
-  }
-</style>
+<TeamMember {name} {socialMediaArray} {avatarUrl} />
