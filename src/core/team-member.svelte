@@ -1,14 +1,15 @@
 <script>
   import SocialMediaIcon from '../core/social-media-icon.svelte';
 
-  export let name;
-  export let socialMediaArray;
-  export let avatarUrl;
+  export let member;
+  let name = member.name;
+  let socialMediaArray = member.socialMediaLinks;
+  let avatarUrl = member.avatarUrl;
 </script>
 
 <div class="meet-the-team-item">
   <img
-    src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg"
+    src={avatarUrl}
     loading="lazy"
     alt=""
     class="meet-the-team-item-img"
