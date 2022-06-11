@@ -65,5 +65,4 @@
   .regions-wrapper {
     margin-top: 160px;
   }
-
 </style>

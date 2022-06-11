@@ -21,8 +21,8 @@ const config = {
       },
       server: {
         fs: {
-          allow: ['..']
-        }
+          allow: ['..'],
+        },
       },
       optimizeDeps: {
         include: ['lodash.get', 'lodash.isequal', 'lodash.clonedeep'],
