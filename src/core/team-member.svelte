@@ -1,5 +1,5 @@
 <script>
-  import SocialMediaIcon from '../core/social-media-icon.svelte';
+  import SocialMediaLink from './social-media-link.svelte';
 
   export let member;
   let name = member.name;
@@ -14,11 +14,11 @@
     alt=""
     class="meet-the-team-item-img"
   />
-  <div class="meeth-the-team-item-text">
+  <div class="meet-the-team-item-text">
     <p class="meet-the-team-item-p">{name}</p>
     <div class="meet-the-team-item-socials-wrapper">
       {#each socialMediaArray as social}
-        <SocialMediaIcon name={social.name} link={social.link} />
+        <SocialMediaLink name={social.name} link={social.link} />
       {/each}
     </div>
   </div>
@@ -37,7 +37,7 @@
     -o-object-fit: cover;
     object-fit: cover;
   }
-  .meeth-the-team-item-text {
+  .meet-the-team-item-text {
     padding: 20px;
   }
   .meet-the-team-item-p {
@@ -48,17 +48,5 @@
   .meet-the-team-item-socials-wrapper {
     margin-top: 20px;
     text-align: center;
-  }
-  .meet-the-team-item-social {
-    width: 26px;
-    height: 26px;
-    margin-right: 6px;
-    margin-left: 6px;
-    border-radius: 4px;
-    background-color: #0a1a33;
-  }
-  .w-inline-block {
-    max-width: 100%;
-    display: inline-block;
   }
 </style>

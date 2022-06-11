@@ -37,12 +37,4 @@
   .update-content {
     margin-bottom: 16px;
   }
-  .updates-year {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    margin-top: 80px;
-    justify-content: space-between;
-  }
 </style>

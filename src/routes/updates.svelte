@@ -132,7 +132,4 @@
     margin-left: 80px;
     background-color: hsla(0, 0%, 100%, 0.5);
   }
-  .update-date {
-    color: hsla(0, 0%, 100%, 0.8);
-  }
 </style>

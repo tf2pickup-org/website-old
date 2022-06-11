@@ -12,7 +12,11 @@ export const teamMemberList = [
     name: 'maly',
     socialMediaLinks: [
       {
-        name: 'tiktok',
+        name: 'TikTok',
+        link: 'https://tiktok.com/maly',
+      },
+      {
+        name: 'GitHub',
         link: 'https://tiktok.com/maly',
       },
     ],
@@ -22,7 +26,7 @@ export const teamMemberList = [
     name: 'supra',
     socialMediaLinks: [
       {
-        name: 'tiktok',
+        name: 'TikTok',
         link: 'https://tiktok.com/supra',
       },
     ],
