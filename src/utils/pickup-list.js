@@ -96,7 +96,7 @@ export const pickupList = [
     region: 'SA',
     link: 'https://br.tf2pickup.org/',
     apiUrl: 'https://api.br.tf2pickup.org',
-    name: 'tf2pickup.org',
+    name: 'br.tf2pickup.org',
     logo: 'static/images/pickup-logos/br.tf2pickup.org.png',
   },
 ];
