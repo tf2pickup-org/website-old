@@ -2,9 +2,9 @@
   import SocialMediaLink from './social-media-link.svelte';
 
   export let member;
-  let name = member.name;
-  let socialMediaArray = member.socialMediaLinks;
-  let avatarUrl = member.avatarUrl;
+  const name = member.name;
+  const socialMediaArray = member.socialMediaLinks;
+  const avatarUrl = member.avatarUrl;
 </script>
 
 <div class="meet-the-team-item">

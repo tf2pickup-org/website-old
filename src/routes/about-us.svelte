@@ -3,7 +3,6 @@
   import TeamMember from '../core/team-member.svelte';
   import { teamMemberList } from '../utils/team-member-list.js';
 
-  console.log(teamMemberList);
 </script>
 
 <SubpageWrapper pageTitle="About">
