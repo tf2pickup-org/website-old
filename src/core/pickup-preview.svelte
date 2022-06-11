@@ -9,29 +9,9 @@
    * @property {string} link
    * @property {string} apiUrl
    * @property {string} logo
+   * @property {object} status
    */
   export let pickupData;
-
-  let pickupStatus = {
-    players: 0,
-    playerSlots: 0,
-    map: null,
-  };
-
-  onMount(async () => {
-    try {
-      const data = await fetch(`${pickupData.apiUrl}/queue`).then(response => response.json());
-      pickupStatus = {
-        players: data.slots.filter(slot => !!slot.player).length,
-        playerSlots: data.slots.length,
-        map: data.mapVoteResults.reduce(function (prev, curr) {
-          return prev.voteCount > curr.voteCount ? prev : curr;
-        }).map,
-      };
-    } catch (error) {
-      console.log(`${pickupData.name}: ${error}`);
-    }
-  });
 </script>
 
 <a href={pickupData.link} class="region-slide-item w-inline-block" target="_blank">
@@ -41,8 +21,8 @@
   <div class="rs-mid">
     <div class="rs-players">
       <div class="rs-players-info">
-        PLAYERS: <span class="rs-current-players">{pickupStatus.players}</span
-        >/{pickupStatus.playerSlots}
+        PLAYERS: <span class="rs-current-players">{pickupData.status.players}</span
+        >/{pickupData.status.playerSlots}
       </div>
     </div>
     <!-- TODO Add proper map thumbnails -->
