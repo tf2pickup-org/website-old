@@ -32,5 +32,4 @@ export const teamMemberList = [
     ],
     avatarUrl: 'static/images/team-member-avatars/supra-placeholder.jpg',
   },
-
 ];

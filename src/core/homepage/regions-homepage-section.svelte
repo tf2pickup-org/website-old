@@ -1,6 +1,6 @@
 <script>
-  import SectionHeading from '../core/section-heading.svelte';
-  import Button from '../core/button.svelte';
+  import SectionHeading from '../section-heading.svelte';
+  import Button from '../button.svelte';
   export let sectionName;
 </script>
 

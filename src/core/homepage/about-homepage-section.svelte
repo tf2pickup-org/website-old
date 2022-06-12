@@ -1,6 +1,6 @@
 <script>
-  import SectionHeading from '../core/section-heading.svelte';
-  import Button from '../core/button.svelte';
+  import SectionHeading from '../section-heading.svelte';
+  import Button from '../button.svelte';
   export let sectionName;
 </script>
 
@@ -46,11 +46,14 @@
     max-width: 650px;
     margin-top: 160px;
   }
-
+  @media screen and (max-width: 900px) {
+    .about-us-wrapper {
+      margin-top: calc(100vw / 10);
+    }
+  }
   .about-us-p {
     margin-bottom: 30px;
   }
-
   .section-background-wrapper {
     position: absolute;
     left: 0%;

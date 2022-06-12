@@ -1,5 +1,5 @@
 <script>
-  import Button from './button.svelte';
+  import Button from '../button.svelte';
 </script>
 
 <section class="home-hero-section">

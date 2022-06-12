@@ -46,7 +46,7 @@
     margin-top: 0px;
     margin-bottom: 0px;
     color: #eb1557;
-    font-size: 200px;
+    font-size: clamp(4rem, 50.7vw - 19.2rem, 12.5rem);
     line-height: 1;
     text-transform: uppercase;
   }
@@ -102,12 +102,11 @@
     }
     .section-title-h2 {
       position: static;
-      font-size: 100px;
       background-color: #0a1a33;
+      width: fit-content;
     }
     .section-headings {
       top: -53px;
-
     }
     .section-title-lines {
       margin-top: 0px;

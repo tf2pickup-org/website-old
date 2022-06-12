@@ -1,6 +1,5 @@
 <script>
-  import Button from '../core/button.svelte';
-  import { listOfMapsImage } from './maps.store.js'
+  import Button from '../button.svelte';
   /**
    * @type {object}
    * @property {name} name
@@ -11,11 +10,6 @@
    * @property {object} status
    */
   export let pickupData;
-
-  let mapUrl = ""
-  listOfMapsImage.forEach(map => pickupData.status.map.includes(map) ? mapUrl = map : mapUrl = 'unknown')
-  console.log(mapUrl)
-
 </script>
 
 <a href={pickupData.link} class="region-slide-item w-inline-block" target="_blank">
@@ -25,14 +19,14 @@
   <div class="rs-mid">
     <div class="rs-players">
       <div class="rs-players-info">
-        PLAYERS: <span class="rs-current-players">{pickupData.status.players}</span
-        >/{pickupData.status.playerSlots}
+        PLAYERS: <span class="rs-current-players">{pickupData.status.players}</span>/{pickupData
+          .status.playerSlots}
       </div>
     </div>
     <!-- TODO Add proper map thumbnails -->
     <img
       loading="lazy"
-      src="images/maps/unknown.png"
+      src="images/maps/{pickupData.status.mapUrl}.png"
       alt="Map preview"
       class="rs-map-preview"
     />

@@ -8,12 +8,7 @@
 </script>
 
 <div class="meet-the-team-item">
-  <img
-    src={avatarUrl}
-    loading="lazy"
-    alt=""
-    class="meet-the-team-item-img"
-  />
+  <img src={avatarUrl} loading="lazy" alt="" class="meet-the-team-item-img" />
   <div class="meet-the-team-item-text">
     <p class="meet-the-team-item-p">{name}</p>
     <div class="meet-the-team-item-socials-wrapper">
