@@ -96,4 +96,21 @@
     margin-left: 5px;
     background-color: #eb1557;
   }
+  @media screen and (max-width: 991px) {
+    .section-title-h2-secondary {
+      display: none;
+    }
+    .section-title-h2 {
+      position: static;
+      font-size: 100px;
+      background-color: #0a1a33;
+    }
+    .section-headings {
+      top: -53px;
+
+    }
+    .section-title-lines {
+      margin-top: 0px;
+    }
+  }
 </style>

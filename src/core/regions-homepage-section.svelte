@@ -39,6 +39,7 @@
     position: relative;
     padding-top: 100px;
     padding-bottom: 100px;
+    overflow: hidden;
   }
 
   .about-us-wrapper {

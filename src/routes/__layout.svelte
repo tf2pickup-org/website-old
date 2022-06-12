@@ -4,8 +4,8 @@
   import Footer from '../core/footer.svelte';
 </script>
 
-<!----ttt---->
-<NavigationBar />
+<!----ttt-
+<NavigationBar />--->
 <slot />
 <Footer />
 

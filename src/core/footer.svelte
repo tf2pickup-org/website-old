@@ -118,4 +118,33 @@
     line-height: 1;
     text-align: center;
   }
+  @media screen and (max-width: 991px) {
+    .footer {
+      flex-direction: column;
+    }
+
+    .footer-right {
+      margin-top: 20px;
+    }
+
+    .footer-p {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .footer-left {
+      width: 100%;
+      flex-wrap: wrap;
+    }
+  }
+  @media screen and (max-width: 479px) {
+    .footer-left {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .footer-right {
+      flex-direction: column;
+    }
+  }
 </style>

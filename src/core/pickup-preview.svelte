@@ -1,7 +1,6 @@
 <script>
   import Button from '../core/button.svelte';
-  import { onMount } from 'svelte';
-
+  import { listOfMapsImage } from './maps.store.js'
   /**
    * @type {object}
    * @property {name} name
@@ -12,6 +11,11 @@
    * @property {object} status
    */
   export let pickupData;
+
+  let mapUrl = ""
+  listOfMapsImage.forEach(map => pickupData.status.map.includes(map) ? mapUrl = map : mapUrl = 'unknown')
+  console.log(mapUrl)
+
 </script>
 
 <a href={pickupData.link} class="region-slide-item w-inline-block" target="_blank">
@@ -28,7 +32,7 @@
     <!-- TODO Add proper map thumbnails -->
     <img
       loading="lazy"
-      src="images/maps/slider-map-preview.png"
+      src="images/maps/unknown.png"
       alt="Map preview"
       class="rs-map-preview"
     />
@@ -53,10 +57,10 @@
     transition: opacity 300ms ease;
     color: #fff;
     text-decoration: none;
-  }
 
-  .region-slide-item:hover {
-    opacity: 0.7;
+    &:hover {
+      opacity: 0.7;
+    }
   }
 
   .rs-top {
