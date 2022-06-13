@@ -20,10 +20,9 @@
   function goToNextPage() {
     carousel.goToNext();
   }
+  let pickupsPerSlide = 4;
 
-  const pickupsPerSlide = 4;
-
-  const pickupGrouped = pickups.reduce((arr, item, index) => {
+  let pickupGrouped = pickups.reduce((arr, item, index) => {
     const groupIndex = Math.floor(index / pickupsPerSlide);
     arr[groupIndex] = [...(arr[groupIndex] ?? []), item];
     return arr;
@@ -60,6 +59,10 @@
 </div>
 
 <style>
+  .region-slide-layout {
+    border-radius: 0.25rem;
+    overflow: hidden;
+  }
   .slide-navigation-button {
     display: flex;
     align-items: center;
