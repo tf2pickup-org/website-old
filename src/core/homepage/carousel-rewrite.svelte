@@ -17,9 +17,23 @@
     arr[groupIndex] = [...(arr[groupIndex] ?? []), item];
     return arr;
   }, []);
-</script>
 
-<svelte:window bind:innerWidth={innerWidth}  bind:scrollY={scrollPosition}/>
+
+</script>
+<svelte:head>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      let btns = document.querySelectorAll('.slide-navigation-button')
+      btns.forEach(el => {
+        el.addEventListener("click", function(event) {
+          console.log('fire')
+          event.preventDefault();
+        })
+      })
+    });
+  </script>
+</svelte:head>
+<svelte:window bind:innerWidth={innerWidth}  bind:scrollY={scrollPosition} />
 <svelte:body style="scroll-margin-top: 300px; scroll-padding-top: 300px;"/>
 <div class="carousel-wrapper">
   <div class="region-slider-mask w-slider-mask">
@@ -30,11 +44,12 @@
             <a
               href="#slide-{pickupGroupedForDesktop.length - 1}"
               class="slide-navigation-button next"
+              on:click|preventDefault
             >
               <CarouselSlideNavButton direction="next" to={i} />
             </a>
           {:else if i > 0}
-            <a href="#slide-{i - 1}" class="slide-navigation-button prev" onclick="maintainScroll()">
+            <a href="#slide-{i - 1}" class="slide-navigation-button prev" on:click|preventDefault>
               <CarouselSlideNavButton direction="prev" to={i - 1} />
             </a>
           {/if}
@@ -44,11 +59,11 @@
             {/each}
           </div>
           {#if i === pickupGroupedForDesktop.length - 1}
-            <a href="#slide-0" class="slide-navigation-button next">
+            <a href="#slide-0" class="slide-navigation-button next" on:click|preventDefault>
               <CarouselSlideNavButton direction="next" to={i} />
             </a>
           {:else if i <= pickupGroupedForDesktop.length - 1}
-            <a href="#slide-{i + 1}" class="slide-navigation-button next">
+            <a href="#slide-{i + 1}" class="slide-navigation-button next" on:click|preventDefault>
               <CarouselSlideNavButton direction="next" to={i} />
             </a>
           {/if}

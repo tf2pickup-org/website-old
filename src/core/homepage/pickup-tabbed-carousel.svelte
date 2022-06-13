@@ -3,6 +3,7 @@
   import { activeRegions } from '../pickup.store.js';
   import CarouselOfPickups from './carousel-of-pickups.svelte';
   import CarouselRewrite from './carousel-rewrite.svelte';
+  import CarouselRewriteTwo from './carousel-rewrite-two.svelte';
 </script>
 
 <div id="playNow" data-scroll="mid" class="regions-wrapper">
@@ -17,7 +18,7 @@
       {#each $activeRegions as region}
         <TabPanel>
           <CarouselOfPickups pickups={region.pickups} />
-          <CarouselRewrite pickups={region.pickups} />
+          <CarouselRewriteTwo pickups={region.pickups} />
         </TabPanel>
       {/each}
     </Tabs>
