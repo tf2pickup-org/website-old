@@ -4,7 +4,7 @@
   export let pickups;
 
   import { onMount } from 'svelte';
-
+  let innerWidth
   let carouselComponent; // for saving Carousel component class
   let carousel; // for calling methods of the carousel instance
 
@@ -27,34 +27,136 @@
     arr[groupIndex] = [...(arr[groupIndex] ?? []), item];
     return arr;
   }, []);
-</script>
 
+  const pickupsGroupedinOne = pickups.reduce((arr, item, index) => {
+    const groupIndex = Math.floor(index / 1);
+    arr[groupIndex] = [...(arr[groupIndex] ?? []), item];
+    return arr;
+  }, []);
+
+  const pickupsGroupedinTwo = pickups.reduce((arr, item, index) => {
+    const groupIndex = Math.floor(index / 2);
+    arr[groupIndex] = [...(arr[groupIndex] ?? []), item];
+    return arr;
+  }, []);
+
+  const pickupsGroupedinThree = pickups.reduce((arr, item, index) => {
+    const groupIndex = Math.floor(index / 3);
+    arr[groupIndex] = [...(arr[groupIndex] ?? []), item];
+    return arr;
+  }, []);
+
+  const pickupsGroupedinFour = pickups.reduce((arr, item, index) => {
+    const groupIndex = Math.floor(index / 4);
+    arr[groupIndex] = [...(arr[groupIndex] ?? []), item];
+    return arr;
+  }, []);
+
+</script>
+<svelte:window bind:innerWidth={ innerWidth } />
 <div class="carousel-wrapper">
-  <div class="region-slider-wrapper w-slider">
-    <div class="region-slider-mask w-slider-mask">
-      <svelte:component
-        this={carouselComponent}
-        bind:this={carousel}
-        let:showPrevPage
-        let:showNextPage
-      >
-        <div class="slide-navigation-button" slot="prev" on:click={goToPrevPage}>
-          <CarouselSlideNavButton direction="left" />
-        </div>
-        {#each pickupGrouped as group, i}
-          <div class="slide-{i} region-slide w-slide">
-            <div class="region-slide-layout">
-              {#each group as pickup}
-                <PickupPreview pickupData={pickup} />
-              {/each}
-            </div>
+  <div class="region-slider-wrapper grid w-slider">
+        {#if innerWidth < 720}
+          <div class="region-slider-mask w-slider-mask">
+            <svelte:component
+              this={carouselComponent}
+              bind:this={carousel}
+              let:showPrevPage
+              let:showNextPage
+            >
+              <div class="slide-navigation-button" slot="prev" on:click={goToPrevPage}>
+                <CarouselSlideNavButton direction="left" />
+              </div>
+            {#each pickupsGroupedinOne as group, i}
+              <div class="slide-{i} region-slide w-slide">
+                <div class="region-slide-layout grid-group-one">
+                  {#each group as pickup}
+                    <PickupPreview pickupData={pickup} />
+                  {/each}
+                </div>
+              </div>
+            {/each}
+              <div slot="next" class="slide-navigation-button" on:click={goToNextPage}>
+                <CarouselSlideNavButton direction="right" />
+              </div>
+            </svelte:component>
           </div>
-        {/each}
-        <div slot="next" class="slide-navigation-button" on:click={goToNextPage}>
-          <CarouselSlideNavButton direction="right" />
-        </div>
-      </svelte:component>
-    </div>
+          {:else if innerWidth > 721 && innerWidth < 860}
+          <div class="region-slider-mask w-slider-mask">
+            <svelte:component
+              this={carouselComponent}
+              bind:this={carousel}
+              let:showPrevPage
+              let:showNextPage
+            >
+              <div class="slide-navigation-button" slot="prev" on:click={goToPrevPage}>
+                <CarouselSlideNavButton direction="left"/>
+              </div>
+              {#each pickupsGroupedinTwo as group, i}
+                <div class="slide-{i} region-slide w-slide">
+                  <div class="region-slide-layout grid-group-two">
+                    {#each group as pickup}
+                      <PickupPreview pickupData={pickup}/>
+                    {/each}
+                  </div>
+                </div>
+              {/each}
+              <div slot="next" class="slide-navigation-button" on:click={goToNextPage}>
+                <CarouselSlideNavButton direction="right"/>
+              </div>
+            </svelte:component>
+          </div>
+        {:else if innerWidth > 861 && innerWidth < 1180}
+          <div class="region-slider-mask w-slider-mask">
+            <svelte:component
+              this={carouselComponent}
+              bind:this={carousel}
+              let:showPrevPage
+              let:showNextPage
+            >
+              <div class="slide-navigation-button" slot="prev" on:click={goToPrevPage}>
+                <CarouselSlideNavButton direction="left"/>
+              </div>
+              {#each pickupsGroupedinThree as group, i}
+                <div class="slide-{i} region-slide w-slide">
+                  <div class="region-slide-layout grid-group-three">
+                    {#each group as pickup}
+                      <PickupPreview pickupData={pickup}/>
+                    {/each}
+                  </div>
+                </div>
+              {/each}
+              <div slot="next" class="slide-navigation-button" on:click={goToNextPage}>
+                <CarouselSlideNavButton direction="right"/>
+              </div>
+            </svelte:component>
+          </div>
+        {:else if innerWidth > 1181}
+          <div class="region-slider-mask w-slider-mask">
+            <svelte:component
+              this={carouselComponent}
+              bind:this={carousel}
+              let:showPrevPage
+              let:showNextPage
+            >
+              <div class="slide-navigation-button" slot="prev" on:click={goToPrevPage}>
+                <CarouselSlideNavButton direction="left"/>
+              </div>
+              {#each pickupsGroupedinFour as group, i}
+                <div class="slide-{i} region-slide w-slide">
+                  <div class="region-slide-layout grid-group-four">
+                    {#each group as pickup}
+                      <PickupPreview pickupData={pickup}/>
+                    {/each}
+                  </div>
+                </div>
+              {/each}
+              <div slot="next" class="slide-navigation-button" on:click={goToNextPage}>
+                <CarouselSlideNavButton direction="right"/>
+              </div>
+            </svelte:component>
+          </div>
+        {/if}
   </div>
 </div>
 
@@ -77,9 +179,12 @@
     grid-auto-columns: 1fr;
     grid-column-gap: 15px;
     grid-row-gap: 15px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
   }
+  .grid-group-one{ grid-template-columns: 1fr;}
+  .grid-group-two {grid-template-columns: 1fr 1fr;}
+  .grid-group-three {grid-template-columns: 1fr 1fr 1fr;}
+  .grid-group-four {grid-template-columns: 1fr 1fr 1fr 1fr;}
   .w-slider-mask {
     position: relative;
     display: block;
@@ -90,7 +195,9 @@
     height: 100%;
     white-space: nowrap;
   }
-
+  :global(.grid .grid-group-two) {
+    grid-template-columns: 1fr 1fr;
+  }
   .w-slider {
     position: relative;
     text-align: center;
