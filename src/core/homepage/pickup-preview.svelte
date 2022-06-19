@@ -10,31 +10,50 @@
    * @property {object} status
    */
   export let pickupData;
+  console.log(pickupData);
 </script>
 
-<a href={pickupData.link} class="region-slide-item w-inline-block" target="_blank">
-  <div class="rs-top">
-    <img loading="lazy" src={pickupData.logo} alt={pickupData.name} class="rs-logo" />
-  </div>
-  <div class="rs-mid">
-    <div class="rs-players">
-      <div class="rs-players-info">
-        PLAYERS: <span class="rs-current-players">{pickupData.status.players}</span>/{pickupData
-          .status.playerSlots}
-      </div>
+{#if pickupData.status}
+  <a href={pickupData.link} class="region-slide-item w-inline-block" target="_blank">
+    <div class="rs-top">
+      <img loading="lazy" src={pickupData.logo} alt={pickupData.name} class="rs-logo" />
     </div>
-    <!-- TODO Add proper map thumbnails -->
-    <img
-      loading="lazy"
-      src="images/maps/{pickupData.status.mapUrl}.png"
-      alt="Map preview"
-      class="rs-map-preview"
-    />
-  </div>
-  <div class="navbar-playnow-btn region-slider">
-    <Button destination={pickupData.link} text="Play Now" />
-  </div>
-</a>
+    <div class="rs-mid">
+      <div class="rs-players">
+        <div class="rs-players-info">
+          PLAYERS: <span class="rs-current-players">{pickupData.status.players}</span>/{pickupData
+            .status.playerSlots}
+        </div>
+      </div>
+      <img
+        loading="lazy"
+        src="images/maps/{pickupData.status.mapUrl}.png"
+        alt="Map preview"
+        class="rs-map-preview"
+      />
+    </div>
+    <div class="navbar-playnow-btn region-slider">
+      <Button destination={pickupData.link} text="Play Now" />
+    </div>
+  </a>
+{:else}
+  <a href={pickupData.link} class="region-slide-item w-inline-block" target="_blank">
+    <div class="rs-top">
+      <img loading="lazy" src={pickupData.logo} alt={pickupData.name} class="rs-logo" />
+    </div>
+    <div class="rs-mid">
+      <div class="rs-players">
+        <div class="rs-players-info">
+          <span class="rs-current-players">API MAY BE DOWN </span>
+        </div>
+      </div>
+      <img loading="lazy" src="images/maps/unknown.png" alt="Map preview" class="rs-map-preview" />
+    </div>
+    <div class="navbar-playnow-btn region-slider">
+      <Button destination={pickupData.link} text="Play Now" />
+    </div>
+  </a>
+{/if}
 
 <style lang="scss">
   .navbar-playnow-btn.region-slider {

@@ -196,9 +196,6 @@
     height: 100%;
     white-space: nowrap;
   }
-  :global(.grid .grid-group-two) {
-    grid-template-columns: 1fr 1fr;
-  }
   .w-slider {
     position: relative;
     text-align: center;
