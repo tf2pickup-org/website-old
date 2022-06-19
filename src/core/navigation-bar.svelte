@@ -1,7 +1,8 @@
 <script>
   import Button from './button.svelte';
+  let innerWidth
 </script>
-
+<svelte:window bind:innerWidth = {innerWidth} />
 <div role="banner" class="navbar-wrapper">
   <div class="navbar-container">
     <div class="navbar-items">

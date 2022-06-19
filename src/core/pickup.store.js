@@ -62,6 +62,7 @@ const mapImageFileNameList = [
   'product',
   'prolands',
   'propaganda',
+  'process',
   'proplant',
   'prowater',
   'ramjam',
