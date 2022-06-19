@@ -22,14 +22,13 @@ export const pickupList = [
     name: 'tf2pickup.de',
     logo: 'static/images/pickup-logos/tf2pickup.de.png',
   },
-  /*
   {
     region: 'EU',
     link: 'https://tf2pickup.cz/',
     apiUrl: 'https://api.tf2pickup.cz',
     name: 'tf2pickup.cz',
     logo: 'static/images/pickup-logos/tf2pickup.cz.png',
-  },*/
+  },
   {
     region: 'EU',
     link: 'https://tf2pickup.fi/',

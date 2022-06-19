@@ -12,7 +12,6 @@
           <Tab>{region.name}</Tab>
         {/each}
       </TabList>
-
       {#each $activeRegions as region}
         <TabPanel>
           <CarouselOfPickups pickups={region.pickups} />
