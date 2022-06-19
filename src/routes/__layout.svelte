@@ -1,11 +1,11 @@
 <script>
   import '../app.scss';
   import NavigationBar from '../core/navigation-bar.svelte';
+  import Header from '../core/header.svelte';
   import Footer from '../core/footer.svelte';
 </script>
 
-
-<NavigationBar />
+<Header/>
 <slot />
 <Footer />
 
@@ -18,7 +18,6 @@
     font-style: normal;
     font-display: swap;
   }
-
   :global(.main-container) {
     position: relative;
     z-index: 100;
