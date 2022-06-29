@@ -1,9 +1,9 @@
 <script>
   import Button from './button.svelte';
-  let innerWidth
+  let innerWidth;
 </script>
 
-<svelte:window bind:innerWidth = {innerWidth} />
+<svelte:window bind:innerWidth />
 <header class="header">
   <a href="/" aria-current="page" class="logo">
     <img
@@ -14,8 +14,8 @@
     />
   </a>
   <!-- Hamburger icon -->
-  <input class="side-menu" type="checkbox" id="side-menu"/>
-  <label class="mobile-menu-trigger" for="side-menu"><span class="icon-line"></span></label>
+  <input class="side-menu" type="checkbox" id="side-menu" />
+  <label class="mobile-menu-trigger" for="side-menu"><span class="icon-line" /></label>
 
   <nav class="navigation">
     <ul class="menu">
@@ -28,7 +28,7 @@
 </header>
 
 <style lang="scss">
-  .header{
+  .header {
     position: sticky;
     top: 0;
     width: 100%;
@@ -36,41 +36,40 @@
     z-index: 399;
   }
   /* Logo */
-  .logo{
+  .logo {
     display: inline-block;
     font-size: 60px;
     margin-left: 15px;
-    padding-top: 20px
+    padding-top: 20px;
   }
   /* Nav menu */
-  .navigation{
+  .navigation {
     width: 100%;
     height: 100%;
     position: fixed;
     overflow: hidden;
-
   }
   .menu {
     background: #0a1a33;
     padding-top: 20px;
   }
-  .menu a{
+  .menu a {
     display: block;
     padding: 30px;
     color: #fff;
   }
-  .menu a:hover{
+  .menu a:hover {
   }
-  .navigation{
+  .navigation {
     max-height: 0;
-    transition: max-height .5s ease-out;
+    transition: max-height 0.5s ease-out;
   }
   /* Menu Icon */
-  .mobile-menu-trigger{
+  .mobile-menu-trigger {
     cursor: pointer;
     float: right;
     padding: 40px 20px;
-  }/* Style label tag */
+  } /* Style label tag */
 
   .icon-line {
     background: #fff;
@@ -78,23 +77,22 @@
     height: 2px;
     position: relative;
     width: 24px;
-
   } /* Style span tag */
 
   .icon-line::before,
-  .icon-line::after{
+  .icon-line::after {
     background: #fff;
     content: '';
     display: block;
     height: 100%;
     position: absolute;
-    transition: all .2s ease-out;
+    transition: all 0.2s ease-out;
     width: 100%;
   }
-  .icon-line::before{
+  .icon-line::before {
     top: 5px;
   }
-  .icon-line::after{
+  .icon-line::after {
     top: -5px;
   }
 
@@ -102,7 +100,7 @@
     display: none;
   } /* Hide checkbox */
   /* Toggle menu icon */
-  .side-menu:checked ~ nav{
+  .side-menu:checked ~ nav {
     max-height: 100%;
   }
   .side-menu:checked ~ .mobile-menu-trigger .icon-line {
@@ -110,28 +108,28 @@
   }
   .side-menu:checked ~ .mobile-menu-trigger .icon-line::before {
     transform: rotate(-45deg);
-    top:0;
+    top: 0;
   }
   .side-menu:checked ~ .mobile-menu-trigger .icon-line::after {
     transform: rotate(45deg);
-    top:0;
+    top: 0;
   }
   /* Responsiveness */
   @media (min-width: 768px) {
-    .navigation{
+    .navigation {
       max-height: none;
       top: 0;
       position: relative;
       float: right;
       width: fit-content;
     }
-    .menu li{
+    .menu li {
       float: left;
     }
-    .menu a:hover{
+    .menu a:hover {
       background-color: transparent;
     }
-    .mobile-menu-trigger{
+    .mobile-menu-trigger {
       display: none;
     }
   }
