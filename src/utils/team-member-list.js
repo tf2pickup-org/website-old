@@ -3,8 +3,8 @@
  * @type {array<object>}
  * @property {name} name
  * @property {array<object>} socialMediaLinks - links to contributors social media if any
- *           @property {name} name
- *           @property {string} link - social media endpoint
+ * @property {name} name
+ * @property {string} link - social media endpoint
  * @property {string} avatarUrl - endpoint for static avatar asset
  */
 export const teamMemberList = [

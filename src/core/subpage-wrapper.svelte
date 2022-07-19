@@ -34,4 +34,14 @@
     border-radius: 5px;
     background-color: rgba(10, 26, 51, 0.6);
   }
+  @media screen and (max-width: 766px) {
+    .subpage-content-wrapper {
+      padding: 48px;
+    }
+  }
+  @media screen and (max-width: 479px) {
+    .subpage-content-wrapper {
+      padding: 24px;
+    }
+  }
 </style>

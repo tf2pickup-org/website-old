@@ -1,0 +1,26 @@
+<script>
+  export let name
+</script>
+
+<div class="partners-title">
+  <p class="partners-heading">{name}</p>
+  <div class="partners-line"></div>
+</div>
+
+
+<style lang="scss">
+  .partners-title {
+    display: flex;
+    align-items: center;
+  }
+  .partners-heading {
+    margin-right: 40px;
+    font-weight: 600;
+  }
+  .partners-line {
+    height: 1px;
+    flex: 1;
+    background-color: hsla(0, 0%, 100%, 0.5);
+  }
+
+</style>
