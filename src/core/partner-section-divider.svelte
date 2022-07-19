@@ -1,12 +1,11 @@
 <script>
-  export let name
+  export let name;
 </script>
 
 <div class="partners-title">
   <p class="partners-heading">{name}</p>
-  <div class="partners-line"></div>
+  <div class="partners-line" />
 </div>
-
 
 <style lang="scss">
   .partners-title {
@@ -22,5 +21,4 @@
     flex: 1;
     background-color: hsla(0, 0%, 100%, 0.5);
   }
-
 </style>

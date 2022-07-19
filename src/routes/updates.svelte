@@ -132,4 +132,16 @@
     margin-left: 80px;
     background-color: hsla(0, 0%, 100%, 0.5);
   }
+  @media screen and (max-width: 766px) {
+    .updates-year {
+      flex-direction: column;
+      margin-top: 0px;
+    }
+    .update-right {
+      padding-bottom: 0;
+    }
+    .updates-left {
+      display: none;
+    }
+  }
 </style>

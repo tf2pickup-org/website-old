@@ -33,6 +33,7 @@
   }
   .update-date {
     color: hsla(0, 0%, 100%, 0.8);
+    margin-top: 12px;
   }
   .update-content {
     margin-bottom: 16px;

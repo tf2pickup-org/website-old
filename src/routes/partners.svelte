@@ -5,20 +5,22 @@
   import PartnerSectionDivider from '../core/partner-section-divider.svelte';
 </script>
 
-
 <SubpageWrapper pageTitle="Partners">
- <p>Morbi vitae nulla risus. In tempus felis erat, facilisis mollis tellus fringilla mollis. Cras arcu ante, gravida non hendrerit id, finibus sit amet diam. Vestibulum pellentesque eu tellus quis hendrerit. Cras blandit vulputate justo volutpat sagittis. Nam congue vel justo ut volutpat. Praesent vulputate malesuada blandit. Nam a porttitor lectus, volutpat ornare mauris. Sed vehicula eu arcu ac ornare.
+  <p>
+    Morbi vitae nulla risus. In tempus felis erat, facilisis mollis tellus fringilla mollis. Cras
+    arcu ante, gravida non hendrerit id, finibus sit amet diam. Vestibulum pellentesque eu tellus
+    quis hendrerit. Cras blandit vulputate justo volutpat sagittis. Nam congue vel justo ut
+    volutpat. Praesent vulputate malesuada blandit. Nam a porttitor lectus, volutpat ornare mauris.
+    Sed vehicula eu arcu ac ornare.
   </p>
 
-  <PartnerSectionDivider name="Technical partners"/>
+  <PartnerSectionDivider name="Technical partners" />
   <div class="partners-grid">
     {#each partnerList as partner}
       <PartnerTile {partner} />
     {/each}
   </div>
-
 </SubpageWrapper>
-
 
 <style lang="scss">
   .partners-grid {
@@ -42,5 +44,4 @@
       grid-template-columns: 1fr;
     }
   }
-
 </style>

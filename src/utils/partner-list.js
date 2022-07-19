@@ -8,31 +8,29 @@
  */
 
 export const partnerList = [
-
-{
-  name: 'Portfel Malego',
-  link: 'https://ko-fi.com/tf2pickuporg',
-  logoUrl: 'static/images/partner-logos/portfel-malego.png',
-},
-{
-  name: 'Portfel Malego',
-  link: 'https://ko-fi.com/tf2pickuporg',
-  logoUrl: 'static/images/partner-logos/portfel-malego.png',
-},
-{
-  name: 'Portfel Malego',
-  link: 'https://ko-fi.com/tf2pickuporg',
-  logoUrl: 'static/images/partner-logos/portfel-malego.png',
-},
-{
-  name: 'Portfel Malego',
-  link: 'https://ko-fi.com/tf2pickuporg',
-  logoUrl: 'static/images/partner-logos/portfel-malego.png',
-},
-{
-  name: 'Portfel Malego',
-  link: 'https://ko-fi.com/tf2pickuporg',
-  logoUrl: 'static/images/partner-logos/portfel-malego.png',
-}
+  {
+    name: 'Portfel Malego',
+    link: 'https://ko-fi.com/tf2pickuporg',
+    logoUrl: 'static/images/partner-logos/portfel-malego.png',
+  },
+  {
+    name: 'Portfel Malego',
+    link: 'https://ko-fi.com/tf2pickuporg',
+    logoUrl: 'static/images/partner-logos/portfel-malego.png',
+  },
+  {
+    name: 'Portfel Malego',
+    link: 'https://ko-fi.com/tf2pickuporg',
+    logoUrl: 'static/images/partner-logos/portfel-malego.png',
+  },
+  {
+    name: 'Portfel Malego',
+    link: 'https://ko-fi.com/tf2pickuporg',
+    logoUrl: 'static/images/partner-logos/portfel-malego.png',
+  },
+  {
+    name: 'Portfel Malego',
+    link: 'https://ko-fi.com/tf2pickuporg',
+    logoUrl: 'static/images/partner-logos/portfel-malego.png',
+  },
 ];
-
