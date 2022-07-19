@@ -6,9 +6,6 @@
 </script>
 
 <NavigationBar />
-<!---
-<Header/>
----->
 <slot />
 <Footer />
 
