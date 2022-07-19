@@ -3,7 +3,7 @@
   import OnlinePlayers from './online-players.svelte';
   import { onMount } from 'svelte';
   let innerWidth;
-  const breakPoint = 1000
+  const breakPoint = 1000;
   let showMobileMenu = false;
   let layoutIsMobile = false;
 
@@ -12,7 +12,7 @@
   };
   const handleMobileLayoutChange = () => {
     layoutIsMobile = innerWidth < breakPoint;
-  }
+  };
 
   const navItems = [
     { label: 'Regions', href: '/#Regions' },
@@ -21,62 +21,65 @@
     { label: 'Partners', href: '/partners' },
     { label: 'How to Play', href: '#' },
   ];
-
-  onMount(() => {
-    const mediaListener = window.matchMedia('(max-width: 767px)');
-
-    mediaListener.addListener(mediaQueryHandler);
-  });
 </script>
 
-<svelte:window bind:innerWidth on:resize={handleMobileLayoutChange}/>
+<svelte:window bind:innerWidth on:resize={handleMobileLayoutChange} />
+<svelte:head>
+  {#if showMobileMenu}
+    <style>
+      body {
+        overflow: hidden;
+      }
+    </style>
+  {/if}
+</svelte:head>
 <div role="banner" class="navbar-wrapper">
   <div class="navbar-container">
     <div class="navbar-items">
       <div class={`brand-nav-wrapper ${layoutIsMobile ? ' mobile' : ''}`}>
-      <a href="/" aria-current="page" class="navbar-logo w-nav-brand w--current">
-        <img
-          src="../images/tf2pickup-pl-logo.png"
-          loading="lazy"
-          alt="tf2pickup.org logo"
-          class="navbar-logo-img"
-        />
-      </a>
-      <div class={`navbar-divider nd-left ${layoutIsMobile ? ' disable' : ''}`} />
-      <nav class="navbar-menu w-nav-menu">
-        <div class="inner">
-          <div
-            on:click={handleMobileMenuTriggerClick}
-            class={`mobile-icon${showMobileMenu ? ' active' : ''}`}
-          >
-            <div class="middle-line" />
+        <a href="/" aria-current="page" class="navbar-logo w-nav-brand w--current">
+          <img
+            src="../images/tf2pickup-pl-logo.png"
+            loading="lazy"
+            alt="tf2pickup.org logo"
+            class="navbar-logo-img"
+          />
+        </a>
+        <div class={`navbar-divider nd-left ${layoutIsMobile ? ' disable' : ''}`} />
+        <nav class="navbar-menu w-nav-menu">
+          <div class="inner">
+            <div
+              on:click={handleMobileMenuTriggerClick}
+              class={`mobile-icon${showMobileMenu ? ' active' : ''}`}
+            >
+              <div class="middle-line" />
+            </div>
+            <ul class={`navbar-links-wrapper navbar-list${showMobileMenu ? ' mobile' : ''}`}>
+              {#each navItems as item}
+                <li>
+                  <a href={item.href} class="navbar-link">{item.label}</a>
+                </li>
+              {/each}
+            </ul>
           </div>
-          <ul class={`navbar-links-wrapper navbar-list${showMobileMenu ? ' mobile' : ''}`}>
-            {#each navItems as item}
-              <li>
-                <a href={item.href} class="navbar-link">{item.label}</a>
-              </li>
-            {/each}
-          </ul>
-        </div>
-      </nav>
+        </nav>
       </div>
       {#if innerWidth > 1000}
-      <div class="navbar-buttons">
-        <a href="/#regions" class="navbar-regions-btn inline-block">
-          <img
-            src="../images/regions-img.png"
-            loading="lazy"
-            alt="Regions icon"
-            class="navbar-regions-btn-img"
-          /></a
-        >
-        <Button destination="#/PlayNow" text="Play Now" />
-        {#if innerWidth > 1260}
-        <div class="navbar-divider nd-left" />
-        <OnlinePlayers />
-        {/if}
-      </div>
+        <div class="navbar-buttons">
+          <a href="/#regions" class="navbar-regions-btn inline-block">
+            <img
+              src="../images/regions-img.png"
+              loading="lazy"
+              alt="Regions icon"
+              class="navbar-regions-btn-img"
+            /></a
+          >
+          <Button destination="#/PlayNow" text="Play Now" />
+          {#if innerWidth > 1260}
+            <div class="navbar-divider nd-left" />
+            <OnlinePlayers />
+          {/if}
+        </div>
       {/if}
     </div>
   </div>
@@ -239,7 +242,6 @@
     width: 40px;
     height: 40px;
   }
-
 
   .inner {
     max-width: 980px;
