@@ -23,7 +23,6 @@
     { label: 'How to Play', href: '#' },
   ];
 
-  };
 </script>
 
 <svelte:window bind:innerWidth on:resize={handleMobileLayoutChange} />
