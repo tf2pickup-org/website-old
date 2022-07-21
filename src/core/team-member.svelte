@@ -22,7 +22,7 @@
 <style lang="scss">
   .meet-the-team-item {
     border-radius: 4px;
-    background-color: #fff;
+    background-color: $light-background;
   }
   .meet-the-team-item-img {
     width: 100%;
@@ -36,7 +36,7 @@
     padding: 20px;
   }
   .meet-the-team-item-p {
-    color: #0a1a33;
+    color: $dark-text;
     font-weight: 600;
     text-align: center;
   }

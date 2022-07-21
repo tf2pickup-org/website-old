@@ -20,7 +20,7 @@
 
 <style lang="scss">
   .region-tab-link.w--current {
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid $border-color-light;
     background-color: transparent;
     opacity: 1;
   }

@@ -1,19 +1,15 @@
 import { derived, readable } from 'svelte/store';
 import { pickupList } from '../utils/pickup-list.js';
 
-function getVoteWinningMap(data) {
-  return data.mapVoteResults.reduce(function (prev, curr) {
-    return prev.voteCount > curr.voteCount ? prev : curr;
-  }).map;
-}
+const getVoteWinningMap = data => data.mapVoteResults.reduce(function (prev, curr) {
+  return prev.voteCount > curr.voteCount ? prev : curr;
+}).map;
 
-function getMapImageFileName(map, arr) {
-  return (
-    arr.find(el => {
-      return map.includes(el);
-    }) ?? 'unknown'
-  );
-}
+const getMapImageFileName = (map, arr) => (
+  arr.find(el => {
+    return map.includes(el);
+  }) ?? 'unknown'
+);
 
 export const pickups = readable([], set => {
   Promise.all(

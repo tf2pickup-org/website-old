@@ -25,7 +25,7 @@
     align-items: center;
     border-style: solid;
     border-width: 1px;
-    border-color: #fff;
-    background-color: hsla(0, 0%, 100%, 0.1);
+    border-color: $border-color-light;
+    background-color: $light-background-transparent-10
   }
 </style>

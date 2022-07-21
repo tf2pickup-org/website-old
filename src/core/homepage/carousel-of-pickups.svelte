@@ -21,35 +21,29 @@
     carousel.goToNext();
   }
 
-  const pickupsGroupedinOne = pickups.reduce((arr, item, index) => {
-    const groupIndex = Math.floor(index / 1);
+  const groupPickups = modulo => pickups.reduce((arr, item, index) => {
+    const groupIndex = Math.floor(index / modulo);
     arr[groupIndex] = [...(arr[groupIndex] ?? []), item];
     return arr;
   }, []);
 
-  const pickupsGroupedinTwo = pickups.reduce((arr, item, index) => {
-    const groupIndex = Math.floor(index / 2);
-    arr[groupIndex] = [...(arr[groupIndex] ?? []), item];
-    return arr;
-  }, []);
+  const pickupsGroupedInOne = groupPickups(1);
+  const pickupsGroupedInTwo = groupPickups(2);
+  const pickupsGroupedInThree = groupPickups(3);
+  const pickupsGroupedInFour = groupPickups(4);
 
-  const pickupsGroupedinThree = pickups.reduce((arr, item, index) => {
-    const groupIndex = Math.floor(index / 3);
-    arr[groupIndex] = [...(arr[groupIndex] ?? []), item];
-    return arr;
-  }, []);
+  const carouselBreakpoints = {
+    singleSlideBreakpointWindowWidth: 720,
+    twoSlidesBreakpointWindowWidth: 860,
+    threeSlidesBreakpointWindowWidth: 1180,
+  }
 
-  const pickupsGroupedinFour = pickups.reduce((arr, item, index) => {
-    const groupIndex = Math.floor(index / 4);
-    arr[groupIndex] = [...(arr[groupIndex] ?? []), item];
-    return arr;
-  }, []);
 </script>
 
 <svelte:window bind:innerWidth />
 <div class="carousel-wrapper">
   <div class="region-slider-wrapper w-slider grid">
-    {#if innerWidth < 720}
+    {#if innerWidth < carouselBreakpoints.singleSlideBreakpointWindowWidth}
       <div class="region-slider-mask w-slider-mask">
         <svelte:component
           this={carouselComponent}
@@ -60,7 +54,7 @@
           <div class="slide-navigation-button" slot="prev" on:click={goToPrevPage}>
             <CarouselSlideNavButton direction="left" />
           </div>
-          {#each pickupsGroupedinOne as group, i}
+          {#each pickupsGroupedInOne as group, i}
             <div class="slide-{i} region-slide w-slide">
               <div class="region-slide-layout grid-group-one">
                 {#each group as pickup}
@@ -74,7 +68,7 @@
           </div>
         </svelte:component>
       </div>
-    {:else if innerWidth > 721 && innerWidth < 860}
+    {:else if innerWidth > carouselBreakpoints.singleSlideBreakpointWindowWidth + 1 && innerWidth < carouselBreakpoints.twoSlidesBreakpointWindowWidth}
       <div class="region-slider-mask w-slider-mask">
         <svelte:component
           this={carouselComponent}
@@ -85,7 +79,7 @@
           <div class="slide-navigation-button" slot="prev" on:click={goToPrevPage}>
             <CarouselSlideNavButton direction="left" />
           </div>
-          {#each pickupsGroupedinTwo as group, i}
+          {#each pickupsGroupedInTwo as group, i}
             <div class="slide-{i} region-slide w-slide">
               <div class="region-slide-layout grid-group-two">
                 {#each group as pickup}
@@ -99,7 +93,7 @@
           </div>
         </svelte:component>
       </div>
-    {:else if innerWidth > 861 && innerWidth < 1180}
+    {:else if innerWidth > carouselBreakpoints.twoSlidesBreakpointWindowWidth + 1 && innerWidth < carouselBreakpoints.threeSlidesBreakpointWindowWidth}
       <div class="region-slider-mask w-slider-mask">
         <svelte:component
           this={carouselComponent}
@@ -110,7 +104,7 @@
           <div class="slide-navigation-button" slot="prev" on:click={goToPrevPage}>
             <CarouselSlideNavButton direction="left" />
           </div>
-          {#each pickupsGroupedinThree as group, i}
+          {#each pickupsGroupedInThree as group, i}
             <div class="slide-{i} region-slide w-slide">
               <div class="region-slide-layout grid-group-three">
                 {#each group as pickup}
@@ -124,7 +118,7 @@
           </div>
         </svelte:component>
       </div>
-    {:else if innerWidth > 1181}
+    {:else if innerWidth > carouselBreakpoints.threeSlidesBreakpointWindowWidth + 1}
       <div class="region-slider-mask w-slider-mask">
         <svelte:component
           this={carouselComponent}
@@ -135,7 +129,7 @@
           <div class="slide-navigation-button" slot="prev" on:click={goToPrevPage}>
             <CarouselSlideNavButton direction="left" />
           </div>
-          {#each pickupsGroupedinFour as group, i}
+          {#each pickupsGroupedInFour as group, i}
             <div class="slide-{i} region-slide w-slide">
               <div class="region-slide-layout grid-group-four">
                 {#each group as pickup}

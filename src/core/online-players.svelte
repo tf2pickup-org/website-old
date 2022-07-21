@@ -16,7 +16,7 @@
 
   .navbar-players-total-small {
     margin-left: 5px;
-    color: hsla(0, 0%, 100%, 0.8);
+    color: $main-text-color-transparent-80;
     text-transform: uppercase;
   }
 </style>

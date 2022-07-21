@@ -1,1 +1,22 @@
 /* Variables and mixins declared here will be available in all other SCSS files */
+$main-text-color: #fff;
+$main-text-color-transparent-80: hsla(0, 0%, 100%, 0.8);
+$main-text-color-transparent-50: hsla(0, 0%, 100%, 0.5);
+$light-background: #fff;
+$light-background-transparent-10: hsla(0, 0%, 100%, 0.1);
+$light-background-transparent-50: hsla(0, 0%, 100%, 0.5);
+$link-hovered: hsla(0, 0%, 100%, 0.7);
+$border-color-light: #fff;
+$main-background: #0a1a33;
+$main-background-transparent-75: rgba(10, 26, 51, 0.75);
+$main-background-transparent-60: rgba(10, 26, 51, 0.6);
+$main-background-transparent-50: rgba(10, 26, 51, 0.5);
+$dark-text: #0a1a33;
+$main-accent-color: #eb1557;
+$second-accent-color: #ffe497;
+$third-accent-color: #3a6092;
+
+/*breakpoints*/
+$desktop-breakpoint: 991px;
+$tablet-breakpoint: 767px;
+$mobile-breakpoint: 478px;

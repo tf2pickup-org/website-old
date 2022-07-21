@@ -32,4 +32,5 @@
     min-height: 100vh;
     flex-direction: column;
   }
+  $tablet-breakpoint: 767px;
 </style>

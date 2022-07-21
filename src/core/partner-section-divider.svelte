@@ -19,6 +19,6 @@
   .partners-line {
     height: 1px;
     flex: 1;
-    background-color: hsla(0, 0%, 100%, 0.5);
+    background-color: $light-background-transparent-50;
   }
 </style>

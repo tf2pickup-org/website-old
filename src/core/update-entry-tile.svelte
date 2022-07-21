@@ -22,17 +22,17 @@
   .update-line-first {
     width: 75%;
     height: 1px;
-    background-color: hsla(0, 0%, 100%, 0.5);
+    background-color: $main-text-color-transparent-50;
   }
 
   .update-line-second {
     height: 1px;
     margin-left: 30px;
     flex: 1;
-    background-color: hsla(0, 0%, 100%, 0.5);
+    background-color: $main-text-color-transparent-50;
   }
   .update-date {
-    color: hsla(0, 0%, 100%, 0.8);
+    color: $main-text-color-transparent-80;
     margin-top: 12px;
   }
   .update-content {

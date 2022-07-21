@@ -39,7 +39,7 @@
     height: 60px;
     justify-content: center;
     align-items: center;
-    background-color: #eb1557;
+    background-color: $main-accent-color;
     transform: rotate(45deg);
   }
 

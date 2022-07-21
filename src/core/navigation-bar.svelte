@@ -4,6 +4,7 @@
   import { onMount } from 'svelte';
   let innerWidth;
   const breakPoint = 1000;
+  const breakPointDesktop = 1260;
   let showMobileMenu = false;
   let layoutIsMobile = false;
 
@@ -21,6 +22,8 @@
     { label: 'Partners', href: '/partners' },
     { label: 'How to Play', href: '#' },
   ];
+
+  };
 </script>
 
 <svelte:window bind:innerWidth on:resize={handleMobileLayoutChange} />
@@ -56,8 +59,8 @@
             </div>
             <ul class={`navbar-links-wrapper navbar-list${showMobileMenu ? ' mobile' : ''}`}>
               {#each navItems as item}
-                <li>
-                  <a href={item.href} class="navbar-link">{item.label}</a>
+                <li on:click={handleMobileMenuTriggerClick}>
+                  <a href={item.href} class="navbar-link">{item.label} </a>
                 </li>
               {/each}
             </ul>
@@ -85,49 +88,6 @@
   </div>
 </div>
 
-<!---
-<div role="banner" class="navbar-wrapper">
-  <div class="navbar-container">
-    <div class="navbar-items">
-      <a href="/" aria-current="page" class="navbar-logo w-nav-brand w--current">
-        <img
-          src="../images/tf2pickup-pl-logo.png"
-          loading="lazy"
-          alt="tf2pickup.org logo"
-          class="navbar-logo-img"
-        />
-      </a>
-      {#if innerWidth < 1200}
-        <div class="navbar-mobile-btn w-nav-button">
-          <div class="navbar-mobile-btn-icon w-icon-nav-menu" />
-        </div>
-      {:else}
-        <div class="navbar-divider" />
-      <nav class="navbar-menu w-nav-menu">
-        <div class="navbar-links-wrapper">
-          {#each navItem as item}
-            <a href={item.href} class="navbar-link">{item.label}</a>
-          {/each}
-        </div>
-        <div class="navbar-buttons">
-          <a href="/#regions" class="navbar-regions-btn inline-block">
-            <img
-              src="../images/regions-img.png"
-              loading="lazy"
-              alt="Regions icon"
-              class="navbar-regions-btn-img"
-            /></a
-          >
-          <Button destination="#/PlayNow" text="Play Now" />
-          <div class="navbar-divider nd-left" />
-          <OnlinePlayers />
-        </div>
-      </nav>
-      {/if}
-    </div>
-  </div>
-</div>
--->
 <style lang="scss">
   .brand-nav-wrapper {
     display: flex;
@@ -145,7 +105,7 @@
     content: '\e602';
   }
   .navbar-mobile-btn.w--open {
-    background-color: #0a1a33;
+    background-color: $main-background;
   }
   .navbar-wrapper {
     padding: 20px;
@@ -178,7 +138,6 @@
     position: relative;
     float: left;
     text-decoration: none;
-    color: #333333;
   }
 
   .navbar-divider {
@@ -187,7 +146,7 @@
     min-height: 50px;
     margin-right: 15px;
     margin-left: 30px;
-    background-color: hsla(0, 0%, 100%, 0.5);
+    background-color: $light-background-transparent-50;
   }
 
   .navbar-menu {
@@ -213,12 +172,12 @@
     padding: 15px;
 
     transition: color 200ms ease;
-    color: #fff;
+    color: $main-text-color;
     text-decoration: none;
     text-transform: capitalize;
 
     &:hover {
-      color: hsla(0, 0%, 100%, 0.7);
+      color: $link-hovered;
     }
   }
 
@@ -267,7 +226,7 @@
     position: absolute;
     width: 100%;
     height: 2px;
-    background-color: #fff;
+    background-color: $light-background;
     transition: all 0.4s;
     transform-origin: center;
   }
@@ -321,7 +280,7 @@
   }
 
   .navbar-list.mobile {
-    background-color: #0a1a33;
+    background-color: $main-background;
     position: fixed;
     display: block;
     height: calc(100% - 45px);
@@ -335,14 +294,14 @@
     position: relative;
   }
   .navbar-list a {
-    color: #fff;
+    color: $main-text-color;
     text-decoration: none;
     display: flex;
     height: 45px;
     align-items: center;
     padding: 0 10px;
   }
-  @media only screen and (min-width: 767px) {
+  @media only screen and (min-width: $tablet-breakpoint) {
     .mobile-icon {
       display: none;
     }

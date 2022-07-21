@@ -32,14 +32,14 @@
     margin-left: auto;
     padding: 80px;
     border-radius: 5px;
-    background-color: rgba(10, 26, 51, 0.6);
+    background-color: $main-background-transparent-60;
   }
-  @media screen and (max-width: 766px) {
+  @media screen and (max-width: $tablet-breakpoint) {
     .subpage-content-wrapper {
       padding: 48px;
     }
   }
-  @media screen and (max-width: 479px) {
+  @media screen and (max-width: $mobile-breakpoint) {
     .subpage-content-wrapper {
       padding: 24px;
     }

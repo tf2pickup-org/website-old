@@ -7,10 +7,12 @@
 <header class="header">
   <a href="/" aria-current="page" class="logo">
     <img
-      src="../images/tf2pickup-pl-logo.png"
+      src="/images/tf2pickup-pl-logo.png"
       loading="lazy"
       alt="tf2pickup.org logo"
       class="navbar-logo-img"
+      width="213"
+      height="40"
     />
   </a>
   <!-- Hamburger icon -->
@@ -32,7 +34,7 @@
     position: sticky;
     top: 0;
     width: 100%;
-    background: #0a1a33;
+    background: $main-background;
     z-index: 399;
   }
   /* Logo */
@@ -50,16 +52,15 @@
     overflow: hidden;
   }
   .menu {
-    background: #0a1a33;
+    background: $main-background;
     padding-top: 20px;
   }
   .menu a {
     display: block;
     padding: 30px;
-    color: #fff;
+    color: $main-text-color;
   }
-  .menu a:hover {
-  }
+
   .navigation {
     max-height: 0;
     transition: max-height 0.5s ease-out;
@@ -72,7 +73,7 @@
   } /* Style label tag */
 
   .icon-line {
-    background: #fff;
+    background: $light-background;
     display: block;
     height: 2px;
     position: relative;
@@ -81,7 +82,7 @@
 
   .icon-line::before,
   .icon-line::after {
-    background: #fff;
+    background: $light-background;
     content: '';
     display: block;
     height: 100%;
