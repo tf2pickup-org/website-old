@@ -1,5 +1,6 @@
 <script>
   export let direction;
+  export let to;
 </script>
 
 {#if direction === 'left'}
@@ -33,15 +34,12 @@
 <style lang="scss">
   .region-slider-arrow {
     z-index: 50;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
     width: 60px;
     height: 60px;
     justify-content: center;
     align-items: center;
-    background-color: #eb1557;
+    background-color: $main-accent-color;
     transform: rotate(45deg);
   }
 

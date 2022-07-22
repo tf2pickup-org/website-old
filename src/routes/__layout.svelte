@@ -1,10 +1,10 @@
 <script>
   import '../app.scss';
   import NavigationBar from '../core/navigation-bar.svelte';
+  import Header from '../core/header.svelte';
   import Footer from '../core/footer.svelte';
 </script>
 
-<!----ttt---->
 <NavigationBar />
 <slot />
 <Footer />
@@ -18,7 +18,6 @@
     font-style: normal;
     font-display: swap;
   }
-
   :global(.main-container) {
     position: relative;
     z-index: 100;
@@ -33,4 +32,5 @@
     min-height: 100vh;
     flex-direction: column;
   }
+  $tablet-breakpoint: 767px;
 </style>

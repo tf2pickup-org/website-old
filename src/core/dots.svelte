@@ -3,9 +3,8 @@
   <div class="line-mid" />
 </div>
 
-<style>
+<style lang="scss">
   .dots-wrapper {
-    position: absolute;
     left: 0%;
     top: 0%;
     right: 0%;
@@ -19,7 +18,7 @@
     bottom: auto;
     width: 5px;
     height: 5px;
-    background-color: #ffe497;
+    background-color: $second-accent-color;
   }
   .line-mid {
     position: absolute;
@@ -31,6 +30,6 @@
     height: 5px;
     margin-right: auto;
     margin-left: auto;
-    background-color: #eb1557;
+    background-color: $main-accent-color;
   }
 </style>

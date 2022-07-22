@@ -8,12 +8,7 @@
 </script>
 
 <div class="meet-the-team-item">
-  <img
-    src={avatarUrl}
-    loading="lazy"
-    alt=""
-    class="meet-the-team-item-img"
-  />
+  <img src={avatarUrl} loading="lazy" alt="" class="meet-the-team-item-img" />
   <div class="meet-the-team-item-text">
     <p class="meet-the-team-item-p">{name}</p>
     <div class="meet-the-team-item-socials-wrapper">
@@ -27,7 +22,7 @@
 <style lang="scss">
   .meet-the-team-item {
     border-radius: 4px;
-    background-color: #fff;
+    background-color: $light-background;
   }
   .meet-the-team-item-img {
     width: 100%;
@@ -41,7 +36,7 @@
     padding: 20px;
   }
   .meet-the-team-item-p {
-    color: #0a1a33;
+    color: $dark-text;
     font-weight: 600;
     text-align: center;
   }

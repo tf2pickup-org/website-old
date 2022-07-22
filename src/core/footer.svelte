@@ -47,20 +47,19 @@
 
   .footer-p {
     padding: 15px;
-    color: #fff;
+    color: $main-text-color;
     text-decoration: none;
   }
 
   .navbar-link {
     padding: 15px;
     transition: color 200ms ease;
-    color: #fff;
+    color: $main-text-color;
     text-decoration: none;
     text-transform: capitalize;
-  }
-
-  .navbar-link:hover {
-    color: hsla(0, 0%, 100%, 0.7);
+    &:hover {
+      color: $link-hovered;
+    }
   }
 
   .navbar-link.disabled-link {
@@ -95,7 +94,7 @@
     width: 100%;
     padding: 10px;
     border-radius: 4px;
-    background-color: #eb1557;
+    background-color: $main-accent-color;
     display: none;
   }
 
@@ -109,7 +108,7 @@
     height: 8px;
     margin-right: auto;
     margin-left: auto;
-    background-color: #eb1557;
+    background-color: $main-accent-color;
     transform: rotate(45deg);
   }
 
@@ -117,5 +116,34 @@
     margin-top: -4px;
     line-height: 1;
     text-align: center;
+  }
+  @media screen and (max-width: $desktop-breakpoint) {
+    .footer {
+      flex-direction: column;
+    }
+
+    .footer-right {
+      margin-top: 20px;
+    }
+
+    .footer-p {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+  }
+  @media screen and (max-width: $tablet-breakpoint) {
+    .footer-left {
+      width: 100%;
+      flex-wrap: wrap;
+    }
+  }
+  @media screen and (max-width: $mobile-breakpoint) {
+    .footer-left {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .footer-right {
+      flex-direction: column;
+    }
   }
 </style>

@@ -27,7 +27,7 @@
 
   .playnow-p {
     margin-right: 8px;
-    color: #fff;
+    color: $main-text-color;
     text-transform: uppercase;
   }
 
@@ -46,6 +46,6 @@
     bottom: auto;
     width: 3px;
     height: 3px;
-    background-color: #ffe497;
+    background-color: $second-accent-color;
   }
 </style>

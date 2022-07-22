@@ -3,21 +3,20 @@
   export let name;
 </script>
 
-<a href={link} target="_blank" class="social-link w-inline-block">{ name }</a>
-
+<a href={link} target="_blank" class="social-link w-inline-block">{name}</a>
 
 <style lang="scss">
   .social-link {
-    color: #0a1a33;
+    color: $dark-text;
     margin-right: 8px;
     &:hover {
-      color: #eb1557;
+      color: $main-accent-color;
     }
     &:visited {
-      color: #0a1a33;
+      color: $main-accent-color;
     }
     &:last-child {
-    margin-right: 0;
+      margin-right: 0;
     }
   }
   .w-inline-block {

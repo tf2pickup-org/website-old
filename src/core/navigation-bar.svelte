@@ -1,33 +1,72 @@
 <script>
   import Button from './button.svelte';
+  import OnlinePlayers from './online-players.svelte';
+  import { onMount } from 'svelte';
+  let innerWidth;
+  const breakPoint = 1000;
+  const breakPointDesktop = 1260;
+  let showMobileMenu = false;
+  let layoutIsMobile = false;
+
+  const handleMobileMenuTriggerClick = () => {
+    showMobileMenu = !showMobileMenu;
+  };
+  const handleMobileLayoutChange = () => {
+    layoutIsMobile = innerWidth < breakPoint;
+  };
+
+  const navItems = [
+    { label: 'Regions', href: '/#Regions' },
+    { label: 'About Us', href: '/about-us' },
+    { label: 'Updates', href: '/updates' },
+    { label: 'Partners', href: '/partners' },
+    { label: 'How to Play', href: '#' },
+  ];
+
 </script>
 
+<svelte:window bind:innerWidth on:resize={handleMobileLayoutChange} />
+<svelte:head>
+  {#if showMobileMenu}
+    <style>
+      body {
+        overflow: hidden;
+      }
+    </style>
+  {/if}
+</svelte:head>
 <div role="banner" class="navbar-wrapper">
   <div class="navbar-container">
     <div class="navbar-items">
-      <a href="/" aria-current="page" class="navbar-logo w-nav-brand w--current">
-        <img
-          src="../images/tf2pickup-pl-logo.png"
-          loading="lazy"
-          alt="tf2pickup.org logo"
-          class="navbar-logo-img"
-        />
-      </a>
-      <div class="navbar-divider" />
-      <nav class="navbar-menu w-nav-menu">
-        <div class="navbar-links-wrapper">
-          <a href="/#Regions" class="navbar-link">Regions</a>
-          <a href="/about-us" class="navbar-link">about us</a>
-          <a href="/updates" class="navbar-link">updates</a>
-          <a href="/partners" class="navbar-link">partners</a>
-          <div class="disabled-link-wrapper">
-            <a href="#" class="navbar-link disabled-link">how to play</a>
-            <div class="tool-tip">
-              <div class="tool-tip-top" />
-              <p class="tool-tip-p">coming soon</p>
+      <div class={`brand-nav-wrapper ${layoutIsMobile ? ' mobile' : ''}`}>
+        <a href="/" aria-current="page" class="navbar-logo w-nav-brand w--current">
+          <img
+            src="../images/tf2pickup-pl-logo.png"
+            loading="lazy"
+            alt="tf2pickup.org logo"
+            class="navbar-logo-img"
+          />
+        </a>
+        <div class={`navbar-divider nd-left ${layoutIsMobile ? ' disable' : ''}`} />
+        <nav class="navbar-menu w-nav-menu">
+          <div class="inner">
+            <div
+              on:click={handleMobileMenuTriggerClick}
+              class={`mobile-icon${showMobileMenu ? ' active' : ''}`}
+            >
+              <div class="middle-line" />
             </div>
+            <ul class={`navbar-links-wrapper navbar-list${showMobileMenu ? ' mobile' : ''}`}>
+              {#each navItems as item}
+                <li on:click={handleMobileMenuTriggerClick}>
+                  <a href={item.href} class="navbar-link">{item.label} </a>
+                </li>
+              {/each}
+            </ul>
           </div>
-        </div>
+        </nav>
+      </div>
+      {#if innerWidth > 1000}
         <div class="navbar-buttons">
           <a href="/#regions" class="navbar-regions-btn inline-block">
             <img
@@ -38,21 +77,35 @@
             /></a
           >
           <Button destination="#/PlayNow" text="Play Now" />
-          <div class="navbar-divider nd-left" />
-          <div class="navbar-players-total">
-            <p class="navbar-players-total-large">420</p>
-            <p class="navbar-players-total-small">players<br />online</p>
-          </div>
+          {#if innerWidth > 1260}
+            <div class="navbar-divider nd-left" />
+            <OnlinePlayers />
+          {/if}
         </div>
-      </nav>
-    </div>
-    <div class="navbar-mobile-btn w-nav-button">
-      <div class="navbar-mobile-btn-icon w-icon-nav-menu" />
+      {/if}
     </div>
   </div>
 </div>
 
 <style lang="scss">
+  .brand-nav-wrapper {
+    display: flex;
+  }
+  .disable {
+    display: none;
+  }
+  .brand-nav-wrapper.mobile {
+    justify-content: space-between;
+  }
+  .navbar-mobile-btn {
+    padding: 15px;
+  }
+  .w-icon-nav-menu:before {
+    content: '\e602';
+  }
+  .navbar-mobile-btn.w--open {
+    background-color: $main-background;
+  }
   .navbar-wrapper {
     padding: 20px;
     background-color: transparent;
@@ -84,7 +137,6 @@
     position: relative;
     float: left;
     text-decoration: none;
-    color: #333333;
   }
 
   .navbar-divider {
@@ -93,7 +145,7 @@
     min-height: 50px;
     margin-right: 15px;
     margin-left: 30px;
-    background-color: hsla(0, 0%, 100%, 0.5);
+    background-color: $light-background-transparent-50;
   }
 
   .navbar-menu {
@@ -119,17 +171,12 @@
     padding: 15px;
 
     transition: color 200ms ease;
-    color: #fff;
+    color: $main-text-color;
     text-decoration: none;
     text-transform: capitalize;
 
     &:hover {
-      color: hsla(0, 0%, 100%, 0.7);
-    }
-
-    &.disabled-link {
-      opacity: 0.5;
-      cursor: not-allowed;
+      color: $link-hovered;
     }
   }
 
@@ -154,55 +201,117 @@
     height: 40px;
   }
 
-  .navbar-players-total {
+  .inner {
+    max-width: 980px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
+    height: 100%;
   }
 
-  .navbar-players-total-large {
-    font-size: 40px;
-    line-height: 1.1;
-  }
-
-  .navbar-players-total-small {
-    margin-left: 5px;
-    color: hsla(0, 0%, 100%, 0.8);
-    text-transform: uppercase;
-  }
-
-  .disabled-link-wrapper {
+  .mobile-icon {
+    width: 25px;
+    height: 14px;
     position: relative;
-    z-index: 10;
-    display: inline-block;
+    cursor: pointer;
   }
 
-  .tool-tip {
+  .mobile-icon:after,
+  .mobile-icon:before,
+  .middle-line {
+    content: '';
     position: absolute;
-    z-index: 5;
     width: 100%;
-    padding: 10px;
-    border-radius: 4px;
-    background-color: #eb1557;
-    display: none;
+    height: 2px;
+    background-color: $light-background;
+    transition: all 0.4s;
+    transform-origin: center;
   }
 
-  .tool-tip-top {
-    position: absolute;
-    left: 50%;
-    top: -4px;
-    right: auto;
-    bottom: auto;
-    width: 8px;
-    height: 8px;
-    margin-right: auto;
-    margin-left: auto;
-    background-color: #eb1557;
+  .mobile-icon:before,
+  .middle-line {
+    top: 0;
+  }
+
+  .mobile-icon:after,
+  .middle-line {
+    bottom: 0;
+  }
+
+  .mobile-icon:before {
+    width: 66%;
+  }
+
+  .mobile-icon:after {
+    width: 33%;
+  }
+
+  .middle-line {
+    margin: auto;
+  }
+
+  .mobile-icon:hover:before,
+  .mobile-icon:hover:after,
+  .mobile-icon.active:before,
+  .mobile-icon.active:after,
+  .mobile-icon.active .middle-line {
+    width: 100%;
+  }
+
+  .mobile-icon.active:before,
+  .mobile-icon.active:after {
+    top: 50%;
+    transform: rotate(-45deg);
+  }
+
+  .mobile-icon.active .middle-line {
     transform: rotate(45deg);
   }
 
-  .tool-tip-p {
-    margin-top: -4px;
-    line-height: 1;
-    text-align: center;
+  .navbar-list {
+    display: none;
+    width: 100%;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0 40px;
+  }
+
+  .navbar-list.mobile {
+    background-color: $main-background;
+    position: fixed;
+    display: block;
+    height: calc(100% - 45px);
+    top: 90px;
+    left: 0;
+    z-index: 99;
+  }
+
+  .navbar-list li {
+    list-style-type: none;
+    position: relative;
+  }
+  .navbar-list a {
+    color: $main-text-color;
+    text-decoration: none;
+    display: flex;
+    height: 45px;
+    align-items: center;
+    padding: 0 10px;
+  }
+  @media only screen and (min-width: $tablet-breakpoint) {
+    .mobile-icon {
+      display: none;
+    }
+
+    .navbar-list {
+      display: flex;
+      padding: 0;
+    }
+
+    .navbar-list a {
+      display: inline-flex;
+    }
   }
 </style>

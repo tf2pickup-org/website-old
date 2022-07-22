@@ -45,8 +45,8 @@
     width: 120%;
     margin-top: 0px;
     margin-bottom: 0px;
-    color: #eb1557;
-    font-size: 200px;
+    color: $main-accent-color;
+    font-size: clamp(4rem, 50.7vw - 19.2rem, 12.5rem);
     line-height: 1;
     text-transform: uppercase;
   }
@@ -59,9 +59,9 @@
     text-transform: uppercase;
     font-family: 'Staatliches';
     letter-spacing: 32px;
-    color: #0a1a33;
-    text-shadow: 0.5px 0.5px 0 #3a6092, -0.5px -0.5px 0 #3a6092, 0.5px -0.5px 0 #3a6092,
-      -0.5px 0.5px 0 #3a6092, 0.5px 0.5px 0 #3a6092;
+    color: $dark-text;
+    text-shadow: 0.5px 0.5px 0 $third-accent-color, -0.5px -0.5px 0 $third-accent-color, 0.5px -0.5px 0 $third-accent-color,
+      -0.5px 0.5px 0 $third-accent-color, 0.5px 0.5px 0 $third-accent-color;
   }
   .section-headings {
     position: absolute;
@@ -82,18 +82,34 @@
     height: 2px;
     min-width: 11px;
     margin-right: 5px;
-    background-color: #eb1557;
+    background-color: $main-accent-color;
   }
 
   .third-line {
     height: 2px;
     flex: 1;
-    background-color: #eb1557;
+    background-color: $main-accent-color;
   }
 
   .fourh-line {
     width: 11px;
     margin-left: 5px;
-    background-color: #eb1557;
+    background-color: $main-accent-color;
+  }
+  @media screen and (max-width: $desktop-breakpoint) {
+    .section-title-h2-secondary {
+      display: none;
+    }
+    .section-title-h2 {
+      position: static;
+      background-color: $main-background;
+      width: fit-content;
+    }
+    .section-headings {
+      top: -53px;
+    }
+    .section-title-lines {
+      margin-top: 0px;
+    }
   }
 </style>

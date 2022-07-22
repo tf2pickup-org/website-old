@@ -1,5 +1,5 @@
 <script>
-  import Button from './button.svelte';
+  import Button from '../button.svelte';
 </script>
 
 <section class="home-hero-section">
@@ -35,7 +35,7 @@
     width: 888px;
     padding: 30px;
     border-radius: 5px;
-    background-color: rgba(10, 26, 51, 0.75);
+    background-color: $main-background-transparent-75;
     text-align: center;
   }
 
@@ -47,7 +47,7 @@
   .hero-p {
     margin-top: 30px;
     margin-bottom: 30px;
-    color: hsla(0, 0%, 100%, 0.8);
+    color: $main-text-color-transparent-80;
   }
 
   .npb-hero {

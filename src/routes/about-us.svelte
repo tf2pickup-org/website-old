@@ -2,7 +2,6 @@
   import SubpageWrapper from '../core/subpage-wrapper.svelte';
   import TeamMember from '../core/team-member.svelte';
   import { teamMemberList } from '../utils/team-member-list.js';
-
 </script>
 
 <SubpageWrapper pageTitle="About">
@@ -24,7 +23,9 @@
     line-height: 1;
     text-align: center;
   }
-
+  p {
+    margin-bottom: 32px;
+  }
   .meet-the-team-grid {
     display: grid;
     margin-top: 24px;
@@ -33,5 +34,14 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
   }
-
+  @media screen and (max-width: 766px) {
+    .meet-the-team-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media screen and (max-width: 479px) {
+    .meet-the-team-grid {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>

@@ -1,9 +1,9 @@
 <script>
-  import Hero from '../core/hero.svelte';
-  import PickupTabbedCarousel from '../core/pickup-tabbed-carousel.svelte';
-  import AboutHomepageSection from '../core/about-homepage-section.svelte';
-  import RegionHomepageSection from '../core/regions-homepage-section.svelte';
-  import UpdatesHomepageSection from '../core/updates-homepage-section.svelte';
+  import Hero from '../core/homepage/hero.svelte';
+  import PickupTabbedCarousel from '../core/homepage/pickup-tabbed-carousel.svelte';
+  import AboutHomepageSection from '../core/homepage/about-homepage-section.svelte';
+  import RegionHomepageSection from '../core/homepage/regions-homepage-section.svelte';
+  import UpdatesHomepageSection from '../core/homepage/updates-homepage-section.svelte';
 </script>
 
 <Hero />

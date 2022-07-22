@@ -1,6 +1,6 @@
 <script>
-  import SectionHeading from '../core/section-heading.svelte';
-  import Button from '../core/button.svelte';
+  import SectionHeading from '../section-heading.svelte';
+  import Button from '../button.svelte';
   export let sectionName;
 </script>
 
@@ -39,6 +39,7 @@
     position: relative;
     padding-top: 100px;
     padding-bottom: 100px;
+    overflow: hidden;
   }
 
   .about-us-wrapper {
@@ -66,9 +67,9 @@
     right: 0%;
     bottom: 0%;
     z-index: 50;
-    background-image: linear-gradient(180deg, #0a1a33 5%, transparent 30%),
-      linear-gradient(180deg, transparent 70%, #0a1a33 95%),
-      linear-gradient(90deg, #0a1a33 50%, transparent 75%);
+    background-image: linear-gradient(180deg, $main-background 5%, transparent 30%),
+      linear-gradient(180deg, transparent 70%, $main-background 95%),
+      linear-gradient(90deg, $main-background 50%, transparent 75%);
   }
 
   .section-bg {

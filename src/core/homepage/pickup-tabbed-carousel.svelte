@@ -1,7 +1,7 @@
 <script>
-  import { Tabs, TabList, TabPanel, Tab } from '../utils/tabs.js';
-  import { activeRegions } from './pickup.store';
-  import CarouselOfPickups from '../core/carousel-of-pickups.svelte';
+  import { Tabs, TabList, TabPanel, Tab } from '../../utils/tabs.js';
+  import { activeRegions } from '../pickup.store.js';
+  import CarouselOfPickups from './carousel-of-pickups.svelte';
 </script>
 
 <div id="playNow" data-scroll="mid" class="regions-wrapper">
@@ -12,7 +12,6 @@
           <Tab>{region.name}</Tab>
         {/each}
       </TabList>
-
       {#each $activeRegions as region}
         <TabPanel>
           <CarouselOfPickups pickups={region.pickups} />
