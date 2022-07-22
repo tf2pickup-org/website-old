@@ -1,9 +1,7 @@
 import { derived, readable } from 'svelte/store';
 import { pickupList } from '../utils/pickup-list.js';
 
-const getVoteWinningMap = data => data.mapVoteResults.reduce(function (prev, curr) {
-  return prev.voteCount > curr.voteCount ? prev : curr;
-}).map;
+const getVoteWinningMap = data => data.mapVoteResults.reduce((prev, curr) => prev.voteCount > curr.voteCount ? prev : curr).map;
 
 const getMapImageFileName = (map, arr) => (
   arr.find(el => {
