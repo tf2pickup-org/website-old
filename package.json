@@ -29,5 +29,5 @@
     "svelte-preprocess": "4.10.7"
   },
   "type": "module",
-  "packageManager": "yarn@3.2.2"
+  "packageManager": "yarn@3.2.3"
 }
