@@ -9,8 +9,3 @@
 <div class="main-container">
   <slot />
 </div>
-
-<style>
-  .main-container {
-  }
-</style>
