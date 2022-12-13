@@ -2754,10 +2754,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svelte@npm:3.49.0":
-  version: 3.49.0
-  resolution: "svelte@npm:3.49.0"
-  checksum: 5b7cb8dbf6b6581b50fab1de63cbcb81816081a1240b03e234b299268fff2f3237bf8f92b683a848f95453353b5694dfe26fa05a55da185a4bb0cd8b80d87dd4
+"svelte@npm:3.54.0":
+  version: 3.54.0
+  resolution: "svelte@npm:3.54.0"
+  checksum: 5d8f082b2d1c8ef41b94ee34cf4568e10e11ade2125cfa0445397027fd33dd68e8e61f2e7a68239181f4b49c72258b643523dafaa42bb6c6bad5cc2d16bb9e4b
   languageName: node
   linkType: hard
 
@@ -2832,7 +2832,7 @@ __metadata:
     prettier: 2.8.1
     prettier-plugin-tailwindcss: 0.2.1
     sass: 1.56.2
-    svelte: 3.49.0
+    svelte: 3.54.0
     svelte-carousel: 1.0.20
     svelte-preprocess: 4.10.7
     tailwindcss: 3.1.6
