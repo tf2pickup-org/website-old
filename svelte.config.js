@@ -11,23 +11,6 @@ const config = {
   extensions: ['.svelte', '.md'],
   kit: {
     adapter: adapter(),
-    vite: {
-      css: {
-        preprocessorOptions: {
-          scss: {
-            additionalData: '@use "src/variables.scss" as *;',
-          },
-        },
-      },
-      server: {
-        fs: {
-          allow: ['..'],
-        },
-      },
-      optimizeDeps: {
-        include: ['lodash.get', 'lodash.isequal', 'lodash.clonedeep'],
-      },
-    },
   },
   preprocess: [
     preprocess({
