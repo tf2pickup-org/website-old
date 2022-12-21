@@ -14,7 +14,7 @@
     "prettier-plugin-tailwindcss": "0.2.1",
     "svelte-carousel": "1.0.20",
     "tailwindcss": "3.2.4",
-    "vite": "4.0.2"
+    "vite": "4.0.3"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
